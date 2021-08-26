@@ -1,13 +1,194 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+    /* Primary colors */
+    --primary: #344955;
+    --primary-light: #4a6572;
+    --primary-dark: #232f34;
+
+    --on-primary:#ffffff;
+    --on-primary-light: #ffffff;
+    --on-primary-dark: #ffffff;
+
+    /* Secondary colors */
+    --secondary: #f9aa33;
+    --secondary-light: #ffdc65;
+    --secondary-dark: #c17b00;
+
+    --on-secondary:#000000;
+    --on-secondary-light: #000000;
+    --on-secondary-dark: #000000;
+
+    --page-background: rgb(162, 191, 206);
+    --surface: #ffffffb2;
+    
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.middle-paral{
+    background: linear-gradient(0.25turn, #344955, #f9aa33);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.opposite-card{
+    transform: rotate(180deg) scaleY(-1);
+}
+
+
+.button-primary {
+    background-color: var(--primary)
+}
+
+.resizable-div {
+    resize: vertical;
+    overflow: auto;
+    min-height: 25%;
+    max-height: 75%;
+}
+
+.parent {
+    overflow: auto;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.classes-dash{
+    position: absolute;
+    right: 0;
+    top: 16;
+    width:10%;
+    height:calc(100% - 4rem);
+}
+
+.suggestion-user-container-2xl{
+    height:350px;
+    width:600px;
+}
+
+.suggestion-image-container-2xl{
+    height:350px;
+    width:600px;
+}
+
+.suggestion-user-container-xl{
+    height:250px;
+    width:500px;
+}
+
+.suggestion-image-container-xl{
+    height:250px;
+    width:500px;
+}
+
+.suggestion-user-container-lg{
+    height:200px;
+    width:400px;
+}
+
+.suggestion-image-container-lg{
+    height:200px;
+    width:400px;
+}
+
+.suggestion-user-container-md{
+    height:200px;
+    width:350px;
+}
+
+.suggestion-image-container-md{
+    height:200px;
+    width:350px;
+}
+
+.suggestion-user-container-sm{
+    height:200px;
+    width:300px;
+}
+
+.suggestion-image-container-sm{
+    height:200px;
+    width:300px;
+}
+
+
+
+/* ENTER TRANSITION */
+/* Declare transition start properties*/
+.slide-enter {
+    transform: translateX(-25vw);
+    opacity: 0;
+    position: absolute;
+    
+}
+
+
+
+.slide-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition:all 400ms ease ;
+}
+
+/* EXIT TRANSITION */
+.slide-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+.slide-exit-active {
+    transform: translateX(-10vw);
+    opacity: 0;
+    transition:all 100ms ease;
+}
+
+
+/* ENTER TRANSITION */
+.replace-enter {
+    transform: translateX(-10vw);
+    opacity: 0;
+    position: absolute;
+    
+}
+
+.replace-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition:all 400ms ease ;
+}
+
+/* EXIT TRANSITION */
+.replace-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.replace-exit-active {
+    transform: translateX(10vw);
+    opacity: 0;
+    transition:all 400ms ease;
+}
+
+
+
+.gap-x-200{
+    column-gap: 410px;
+}
+
+.chat{
+    height:100%;
+
+}
+
+.friends{
+    
+    min-height: 15vh;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

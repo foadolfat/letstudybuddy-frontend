@@ -3,18 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@react-spring/parallax": "^9.2.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "lodash-es": "^4.17.21",
+    "lodash-move": "^1.1.1",
+    "re-resizable": "^6.9.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-resize-detector": "^6.7.6",
+    "react-rnd": "^10.3.4",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "4.0.3",
+    "react-spring": "^9.2.4",
+    "react-spring-dnd": "^0.2.0",
+    "react-tinder-card": "^1.4.0",
+    "react-transition-group": "^4.4.2",
+    "react-use-gesture": "^9.1.3",
+    "react-with-gesture": "^4.0.8",
+    "socket.io": "^4.1.3",
+    "socket.io-client": "^4.1.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,5 +51,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.172",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   }
 }
