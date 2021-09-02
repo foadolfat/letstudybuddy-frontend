@@ -89,7 +89,7 @@ function UserCard(){
                      <div className="bg-primary-light rounded-t-lg 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-400 md:h-200  sm:w-400 sm:h-200  xs:w-400 xs:h-200">
                          <div className="relative w-full h-full">
                              <img className="object-cover rounded-t-lg w-full h-full"
-                            src="https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg" alt={'userpic'}/>
+                            src="https://miro.medium.com/max/500/1*5ZpezKwqt6fUXNNBpSUDXA.jpeg" alt={'userpic'}/>
                             <button className="absolute text-secondary-dark hover:text-primary-light top-0 right-0" onClick={handleEdit}><SAVE/></button>
                         </div>
                     </div>
