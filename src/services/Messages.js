@@ -1,5 +1,5 @@
 // var url = "http://localhost:5050"
-var url = "https://letstudybuddy.herokuapp.com/"
+var url = "https://letstudybuddy.herokuapp.com"
 class Messages{
 
     async getMessages(room_id){
