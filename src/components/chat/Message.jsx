@@ -9,7 +9,7 @@ function Message({content, username, date}){
             console.log(chat.name)
         }
            
-    });
+    }, [chat, username]);
     
     return(
         <div className="flex flex-col m-2 ">
