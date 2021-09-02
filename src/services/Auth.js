@@ -1,4 +1,5 @@
-var url = "http://localhost:5050"
+// var url = "http://localhost:5050"
+var url = "https://letstudybuddy.herokuapp.com/"
 class Auth{
     async signIn(u, p){
         if(u!=='' && p!==''){

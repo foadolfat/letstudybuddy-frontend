@@ -4,7 +4,7 @@ let token='';
 let socket='';
 if(user && user.accessToken){
   token = user.accessToken;
-  socket = io("http://localhost:3030", {
+  socket = io("https://letstudybuddy.herokuapp.com/", {
     auth: {token}
   });
 }
