@@ -25,10 +25,14 @@
 
 .middle-paral{
     background: linear-gradient(0.25turn, #344955, #f9aa33);
+
 }
 
 .no-scrollbar::-webkit-scrollbar {
     display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: hidden;
 }
 
 .opposite-card{
@@ -186,6 +190,11 @@
 .friends{
     
     min-height: 15vh;
+}
+
+.no-text-wrap {
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @tailwind base;

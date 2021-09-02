@@ -1,8 +1,8 @@
 import * as React from "react";
 import Navbar from "../components/Navbar";
-import ClassesDash from "../components/classes/ClassesDash";
+// import ClassesDash from "../components/classes/ClassesDash";
 import UserCard from "../components/users/UserCard";
-import Suggestions from "../components/suggestions/Suggestions";
+// import Suggestions from "../components/suggestions/Suggestions";
 
 function Profile(){
     

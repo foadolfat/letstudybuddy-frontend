@@ -6,7 +6,7 @@ function Suggestion({name, major, peer_id}){
 
 
 
-        <div className=" flex flex-col shadow-lg">
+        <div className=" flex flex-col shadow-lg ">
             <div className="bg-primary-light rounded-t-lg 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
                 <img className="object-cover rounded-t-lg w-full h-full" 
                 src="https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg" alt={"profilepic"}/>

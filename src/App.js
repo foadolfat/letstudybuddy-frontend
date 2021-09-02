@@ -1,4 +1,5 @@
 import * as React from "react";
+
 // import { useSpring } from 'react-spring'
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./services/ProtectedRoute";
@@ -11,6 +12,8 @@ import Profile from "./pages/Profile";
 // import ClassesDash from "./components/classes/ClassesDash";
 // import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth.jsx";
+// import ChatTest from "./components/chat/ChatTest";
+
 
 function App() {
   // const fade = useSpring({
@@ -23,19 +26,19 @@ function App() {
   //     scale:1
   //   }
   // })
+  
   return (
 
     <BrowserRouter>
-      
+      {/* <ChatTest/> */}
       <Switch>
         <Route exact path='/' component={Landing}></Route>
         <Route exact path='/Landing' component={Landing}></Route>
         <Route exact path='/Auth' component={Auth}></Route>
-        {/* <animated.div style={fade}> */}
+
         <ProtectedRoute exact path="/Dashboard" component={Dashboard}></ProtectedRoute>
         <ProtectedRoute exact path="/Profile" component={Profile}></ProtectedRoute>
 
-      {/* </animated.div> */}
       </Switch>
     </BrowserRouter>
     

@@ -15,9 +15,9 @@ function Auth () {
 
     let parallax;
     return (
-        <div className="">
+        <div className="no-scrollbar overflow-hidden">
             
-            <section className="w-full px-8 text-gray-700 bg-secondary ">
+            <section className="w-full px-8 text-gray-700 bg-secondary no-scrollbar">
                 <div className="container flex flex-col flex-wrap items-center justify-between py-3 mx-auto md:flex-row max-w-7xl">
                     <div className="relative flex flex-col md:flex-row">
                         <NavLink 
@@ -43,7 +43,7 @@ function Auth () {
                 </div>
             </section>
             {/* <Navbar/> */}
-            <Parallax className="h-full"  pages={3} enabled={false} ref={ref => parallax = ref} horizontal={true}>
+            <Parallax className="h-full no-scrollbar"  pages={3} enabled={true} ref={ref => parallax = ref} horizontal={true} >
                 <ParallaxLayer id={"login"} offset={0} speed={0}/>
                 <ParallaxLayer  offset={0} speed={0.5}>
                 <div  className="flex flex-col items-center justify-center bg-primary  w-3/4 h-full shadow-xl " >  <Login userCreated={userCreated}/></div>

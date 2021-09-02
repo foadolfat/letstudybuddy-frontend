@@ -36,7 +36,7 @@ function Login({userCreated}){
                 <form onSubmit={handleSubmit}>
 
                     <div className="bg-white rounded-lg border shadow-lg p-12 w-full h-full relative">
-                        <div classname="text-2xl text-black font-bold ">Sign in:</div>
+                        <div className="text-2xl text-black font-bold ">Sign in:</div>
                         <div className="grid grid-cols-1 gap-1 field mt-12">
 
                             <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"

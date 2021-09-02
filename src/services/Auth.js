@@ -13,14 +13,15 @@ class Auth{
                     password: p
                 })
             }).then(response => response.json()).then(data => {
-                console.log(data)
+
                 localStorage.setItem("user", JSON.stringify(data));
+                localStorage.setItem("chat", JSON.stringify({"name":u}));
             })
         }
     }
 
-    async signUp(u, p, e, f, l){
-        if(u!=='' && p!=='' && e!=='' && f!=='' && l!==''){
+    async signUp(u, p, e, f, l, g){
+        if(u!=='' && p!=='' && e!==''){
             let response = await fetch(`${url}/user`, {
                 method: 'POST',
                 headers: {
@@ -32,7 +33,8 @@ class Auth{
                     password: p,
                     fName:f,
                     lName:l,
-                    email:e
+                    email:e,
+                    gpa:g
                 })
             })
 

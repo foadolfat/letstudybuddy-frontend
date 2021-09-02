@@ -12,11 +12,13 @@ class Profile{
                     'x-access-token':`${user.accessToken}`
                 }
             })
-            return await response.json();
+            const result = await response.json();
+            //console.log(result)
+            return result;
         }
     }
 
-    async updateUser(fName, lName, major){
+    async updateUser(fName, lName, major, degree, gpa){
         const user = JSON.parse(localStorage.getItem("user"));
         if(user && user.accessToken){
             let response = await fetch(`${url}/user`, {
@@ -29,7 +31,9 @@ class Profile{
                 body: JSON.stringify({ 
                     fName: fName,
                     lName: lName,
-                    major: major
+                    major: major,
+                    degree: degree,
+                    gpa: gpa
                 })
             })
             return await response.json();

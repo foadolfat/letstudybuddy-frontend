@@ -10,6 +10,7 @@ import { useResizeDetector } from 'react-resize-detector';
 
 
 function Dashboard(){
+
     const mediaMatch = window.matchMedia('(min-width: 765px)');
     const [matches, setMatches] = useState(mediaMatch.matches);
     const { width, ref } = useResizeDetector();
@@ -49,7 +50,7 @@ function Dashboard(){
 
 
                 <animated.div ref={ref} className="xs:mt-56 md:mt-0 md:ml-4" style={chatSlide}>
-                    <Chat toggle={isActive}/>
+                    <Chat  toggle={isActive} />
                 </animated.div>
 
             </div>

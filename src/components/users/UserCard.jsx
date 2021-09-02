@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect }from "react";
+import { useState}from "react";
 import {ReactComponent as EDIT} from "../../assets/icons/edit_solid.svg"
 import {ReactComponent as SAVE} from "../../assets/icons/check_solid.svg"
 import { useTransition, animated } from 'react-spring';
@@ -14,6 +14,8 @@ function UserCard(){
     const firstNameRef = React.useRef();
     const lastNameRef = React.useRef();
     const majorRef = React.useRef();
+    const degreeRef = React.useRef();
+    const gpaRef = React.useRef();
 
 
     React.useEffect(() => {
@@ -29,9 +31,13 @@ function UserCard(){
             if(firstNameRef.current.value === '' && user && user.FNAME) firstNameRef.current.value = user.FNAME;
             if(lastNameRef.current.value === '' && user && user.LNAME) lastNameRef.current.value = user.LNAME;
             if(majorRef.current.value === '' && user && user.MAJOR) majorRef.current.value = user.MAJOR;
+            if(degreeRef.current.value === '' && user && user.MAJOR) degreeRef.current.value = user.DEGREE;
+            if(gpaRef.current.value === '' && user && user.GPA) gpaRef.current.value = user.GPA;
+            if(gpaRef.current.value > 4 ) gpaRef.current.value = 4;
+            if(gpaRef.current.value < 0 ) gpaRef.current.value = 0;
             //console.log(firstNameRef.current.value, lastNameRef.current.value, majorRef.current.value)
             const api = new Profile();
-            api.updateUser(firstNameRef.current.value, lastNameRef.current.value, majorRef.current.value).then((response) => {
+            api.updateUser(firstNameRef.current.value, lastNameRef.current.value, majorRef.current.value, degreeRef.current.value, gpaRef.current.value).then((response) => {
                 if(!response.code) setUser(response)
             });
         }
@@ -94,6 +100,8 @@ function UserCard(){
                                 <div className="" >First Name: <input type="text" ref={firstNameRef} className="w-full text-gray-800 rounded-sm focus:outline-none"></input></div>
                                 <div className="" >Last Name: <input type="text" ref={lastNameRef} className="w-full text-gray-800 rounded-sm focus:outline-none"></input></div>
                                 <div className="" >Major: <input type="text" ref={majorRef} className="w-full text-gray-800 rounded-sm focus:outline-none"></input></div>
+                                <div className="" >Degree: <input type="text" ref={degreeRef} className="w-full text-gray-800 rounded-sm focus:outline-none"></input></div>
+                                <div className="" >GPA: <input type="number" ref={gpaRef}  className="w-full text-gray-800 rounded-sm focus:outline-none" step="0.01" min="0" max="4"></input></div>
                             </div>
                             
                         </div>
@@ -138,12 +146,13 @@ function UserCard(){
 
                                     <div>Name: {user && user.FNAME} {user && user.LNAME}</div>
                                     <div>Major: {user && user.MAJOR}</div>
+                                    <div>GPA: {user && user.GPA}</div>
                                     
                                 </div>
                             
                             
                         </div>
-                        <div className="xs:hidden md:flex md:flex-row">Class priorities:</div>
+                        <div className="xs:hidden md:flex md:flex-row">Bio:</div>
                     </div>
                     
                 </div>
