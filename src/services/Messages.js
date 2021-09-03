@@ -16,8 +16,11 @@ class Messages{
                     room_id:room_id
                 })
             })
-            const result = await response.json();
-            return result;
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
         }
         
     }

@@ -13,9 +13,11 @@ class PeerClasses{
                         'x-access-token':`${user.accessToken}`
                     }
                 })
-                var result = await response.json();
-                //console.log(result)
-                return await result;
+                if (response.status === 401) {
+                    localStorage.clear();
+                    window.open("/Auth","_self");
+                }
+                else return await response.json();
             }
             
         }

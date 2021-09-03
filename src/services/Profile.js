@@ -38,7 +38,11 @@ class Profile{
                     gpa: gpa
                 })
             })
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
         }
         
     }
@@ -60,8 +64,11 @@ class Profile{
                 })
             })
 
-            console.log(response.status);
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
           
         }
         return {message:"No input!"};
@@ -83,8 +90,11 @@ class Profile{
                 })
             })
 
-            console.log(response.status);
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
           
         }
         return {message:"No input!"};
@@ -101,7 +111,11 @@ class Profile{
                     'x-access-token':`${user.accessToken}`
                 }
             })
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
         }
         
     }

@@ -14,7 +14,6 @@ class Auth{
                     password: p
                 })
             }).then(response => response.json()).then(data => {
-
                 localStorage.setItem("user", JSON.stringify(data));
                 localStorage.setItem("chat", JSON.stringify({"name":u}));
             })

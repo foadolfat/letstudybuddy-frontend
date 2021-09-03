@@ -12,7 +12,11 @@ class Auth{
                     'x-access-token':`${user.accessToken}`
                 }
             })
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
         }
         else{
             localStorage.clear();
@@ -35,7 +39,11 @@ class Auth{
                     liked:true
                 })
             })
-            return await response.json();
+            if (response.status === 401) {
+                localStorage.clear();
+                window.open("/Auth","_self");
+            }
+            else return await response.json();
         }
         
     }
