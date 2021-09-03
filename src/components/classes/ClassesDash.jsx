@@ -102,7 +102,7 @@ function ClassesDash({editing}){
         //     Classes
         // </div>
         
-            <div className="flex flex-col h-full w-400 justify-center items-center bg-primary-dark rounded-lg shadow-md">
+            <div className="flex flex-col h-full w-400 justify-center items-center bg-primary-dark rounded-lg shadow-md overflow-auto">
                 {classesExist && !editing && <div className="flex flex-col h-full w-400 justify-center items-center  rounded-lg shadow-md ">
                   <SpringList onDragEnd={(order) => {console.log(order)}}>
                       {classes && classes.map((c) => {

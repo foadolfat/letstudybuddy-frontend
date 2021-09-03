@@ -46,7 +46,8 @@ function Suggestions(){
                                         lname={peers.lname} 
                                         username={peers.username} 
                                         peer_id={peers.peer_id} 
-                                        gpa={peers.gpa}/>
+                                        gpa={peers.gpa}
+                                        email={peers.EMAIL}/>
                         </TinderCard>
                     )}
                 </div>
