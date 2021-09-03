@@ -1,45 +1,56 @@
 import * as React from "react"
+import GPA from "../../assets/icons/GPA.jsx"
 
-function Suggestion({name, major, peer_id}){
+function Suggestion({username, fname, lname, degree, major, peer_id, gpa}){
+
+    
 
     return(
 
-
-
         <div className=" flex flex-col shadow-lg ">
+            
             <div className="bg-primary-light rounded-t-lg 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
                 <img className="object-cover rounded-t-lg w-full h-full" 
                 src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
             </div>
-            <div className="bg-primary-dark p-8 text-on-primary-dark rounded-b-lg space-y-4 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
-                <div className="flex xs:flex-col md:flex-row xl:text-xl lg:text-md md:space-x-16 lg:space-x-24 2xl:space-x-36 xs:space-y-4 md:space-y-0">
-                    <div>Name:</div>{name}
-                    <div>Major:</div>{major}
-                    <div>GPA:</div>
-                    
+            <div className="bg-gray-200 p-8 text-gray-800 rounded-b-lg space-y-4 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
+            {/* xs:flex-col md:flex-row xl:text-xl lg:text-md md:space-x-16 lg:space-x-24 2xl:space-x-36 xs:space-y-4 md:space-y-0 */}
+                <div className="flex justify-between ">
+                    <div className="text-sm font-bold text-gray-400 space-y-4">Username: 
+                        <div className="text-xl font-bold text-gray-800">
+                            {username}
+                        </div>
+                        <div>Major:
+                            <div className="text-xl font-bold text-gray-800">
+                                {major}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div className="text-sm font-bold text-gray-400 space-y-4">Name: 
+                        <div className="text-xl font-bold text-gray-800">
+                            {fname} {lname}
+                        </div>
+                        <div>Degree: 
+                            <div className="text-xl font-bold text-gray-800">
+                                {degree}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div className="w-1/6 text-sm font-bold text-gray-400">GPA: 
+                        <GPA percentage={(gpa/4)*100} speed={20} strokeColor={"green"}/>
+                    </div>
                 </div>
-                <div className="xs:hidden md:flex md:flex-row">Class priorities:</div>
+
+                <div className="text-lg font-bold text-gray-400">Classes in common with you:
+                
+                </div>
             </div>
         </div>
 
 
 
-
-
-
-
-
-
-        // <div className="">
-        //     <div className="bg-primary-light image rounded-t-lg 2xl:w-full 2xl:h-full xl:h-full xl:w-full lg:h-3/4 lg:w-3/4 md:h-3/4 md:w-3/4 sm:h-0 sm:w-0 xs:h-0 xs:w-0 sh:h-1/2 xsh:invisible rounded-b-lg">
-        //         <img className="object-cover w-full h-full invisible 2xl:visible xl:visible lg:visible lg:rounded-t-lg lg:rounded-b-none md:visible md:rounded-lg sm:invisible xs:invisible sh:rounded-lg xsh:invisible sh:mt-60" 
-        //         src="https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg"/>
-        //     </div>
-        //     <div className="bg-primary-dark 2xl:card xl:h-80 xl:w-full lg:h-60 lg:w-3/4 md:h-full md:w-3/4 sm:h-0 sm:w-0 xs:h-0 xs:w-0 sh:invisible xsh:invisible rounded-b-lg ">
-            
-        //     </div>
-        // </div>
-        
 
     )
 

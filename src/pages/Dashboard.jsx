@@ -7,7 +7,7 @@ import { useState, useEffect }from "react";
 // import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import { useSpring, animated } from 'react-spring'
 import { useResizeDetector } from 'react-resize-detector';
-
+import GPA from "../assets/icons/GPA.jsx"
 
 function Dashboard(){
 

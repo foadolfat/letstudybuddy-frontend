@@ -1,6 +1,6 @@
 import * as React from "react";
 import Auth from "../../services/Auth";
-
+import { trackPromise } from 'react-promise-tracker';
 
 
 function Login({userCreated}){
@@ -15,7 +15,8 @@ function Login({userCreated}){
 
         e.preventDefault();
         const api = new Auth();
-        api.signIn(usernameRef.current.value, passwordRef.current.value).then(() => {
+        trackPromise(
+            api.signIn(usernameRef.current.value, passwordRef.current.value).then(() => {
             const user = JSON.parse(localStorage.getItem("user"));
             if(user && user.accessToken) {
                 alert("Authorized!");
@@ -25,9 +26,10 @@ function Login({userCreated}){
                 alert("Not Authorized!");
                 localStorage.clear();
             }
-        }).catch((reason) => {
-            console.log(reason);
-        })
+            }).catch((reason) => {
+                console.log(reason);
+            })
+        )
     }
     
     return(

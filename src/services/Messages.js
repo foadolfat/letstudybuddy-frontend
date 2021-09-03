@@ -19,6 +19,7 @@ class Messages{
             const result = await response.json();
             return result;
         }
+        
     }
 }
 export default Messages

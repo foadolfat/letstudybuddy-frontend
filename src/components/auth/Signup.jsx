@@ -1,5 +1,6 @@
 import * as React from "react";
 import Auth from "../../services/Auth";
+import { trackPromise } from 'react-promise-tracker';
 
 function SignUp({setUserCreated}){
     const [newUser, setUser] = React.useState({u:"",p:"",f:"",l:"",e:"", g:"", c:""});
@@ -10,12 +11,14 @@ function SignUp({setUserCreated}){
         if(newUser.p !== newUser.c) alert("Passwords do not match!");
         else{
             const api = new Auth();
-            api.signUp(newUser.u, newUser.p, newUser.e, newUser.f, newUser.l, newUser.g).then((response) => {
-                alert(response.message);
-                setUserCreated(newUser.u);
-            }).catch((reason) => {
-                console.log(reason);
-            })
+            trackPromise(
+                api.signUp(newUser.u, newUser.p, newUser.e, newUser.f, newUser.l, newUser.g).then((response) => {
+                    alert(response.message);
+                    setUserCreated(newUser.u);
+                }).catch((reason) => {
+                    console.log(reason);
+                })  
+            )
         }
     }
 

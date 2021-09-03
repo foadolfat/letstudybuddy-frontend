@@ -17,6 +17,7 @@ class Profile{
             //console.log(result)
             return result;
         }
+        
     }
 
     async updateUser(fName, lName, major, degree, gpa){
@@ -39,6 +40,7 @@ class Profile{
             })
             return await response.json();
         }
+        
     }
 
     async addClasses(c, s, p){
@@ -101,6 +103,7 @@ class Profile{
             })
             return await response.json();
         }
+        
     }
 }
 export default Profile;

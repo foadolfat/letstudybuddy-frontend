@@ -14,6 +14,10 @@ class Auth{
             })
             return await response.json();
         }
+        else{
+            localStorage.clear();
+            window.open("/Auth","_self");
+        }
     }
 
     async addPeer(peer_id){
@@ -33,6 +37,7 @@ class Auth{
             })
             return await response.json();
         }
+        
     }
 }
 export default Auth;

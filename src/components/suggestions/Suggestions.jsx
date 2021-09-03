@@ -7,6 +7,7 @@ const NEW_PEER = "new_peer_event";
 
 function Suggestions(){
     const [peerSuggestions, setSuggestions] = React.useState();
+
     React.useEffect(() => {
         const api = new Dashboard();
         api.suggestions().then((suggs) => {
@@ -15,6 +16,7 @@ function Suggestions(){
     },[]);
 
     const onSwipe = (direction, peer_id) => {
+
         if(direction==="right"){
             const api = new Dashboard();
             async function fetchData () {
@@ -38,7 +40,13 @@ function Suggestions(){
                 <div className="flex  items-center justify-center overflow-hidden ">
                     {peerSuggestions && peerSuggestions.length && peerSuggestions.map((peers, index) =>
                         <TinderCard className="absolute overflow-hidden " key={peers.username} onSwipe={(dir) => onSwipe(dir, peers.peer_id)} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['up', 'down']}>
-                            <Suggestion name={peers.username} peer_id={peers.peer_id} />
+                            <Suggestion fname={peers.fname} 
+                                        major={peers.major} 
+                                        degree={peers.degree} 
+                                        lname={peers.lname} 
+                                        username={peers.username} 
+                                        peer_id={peers.peer_id} 
+                                        gpa={peers.gpa}/>
                         </TinderCard>
                     )}
                 </div>
