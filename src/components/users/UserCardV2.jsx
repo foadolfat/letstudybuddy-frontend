@@ -128,67 +128,70 @@ function UserCardV2(){
 
         <div className=" flex flex-col shadow-lg overflow-hidden">
             
-            <div className="bg-primary-light rounded-t-lg 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
+            <div className="bg-primary-light rounded-t-lg 2xl:w-800 2xl:h-400  xl:w-700 xl:h-350  lg:w-600 lg:h-300  md:w-500 md:h-250  sm:w-400 sm:h-200  xs:w-400 xs:h-200">
                 <img className="object-cover rounded-t-lg w-full h-full" 
                 src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
             </div>
-            <div className="bg-gray-200 p-8 text-gray-800 rounded-b-lg space-y-4 2xl:w-600 2xl:h-350  xl:w-500 xl:h-250  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-300 sm:h-200  xs:w-300 xs:h-200">
+            <div className="xl:space-y-16 lg:space-y-12 md:space-y-8 xs:space-y-4 bg-gray-200 p-8 text-gray-800 rounded-b-lg 2xl:w-800 2xl:h-500  xl:w-700 xl:h-500  lg:w-600 lg:h-450  md:w-500 md:h-400  sm:w-400 sm:h-350  xs:w-400 xs:h-350">
            
 
                 <div className="flex justify-between ">
-                    <div className="text-sm font-bold text-gray-400 space-y-4 w-200">
-                        <span className="">
-                            Username:
-                        </span>
-
-                        {!usernameEdit && 
-                        <div className="flex text-xl font-bold text-gray-800 ">
-                            <button className="edit-button" onClick={() => setUsernameEdit(!usernameEdit)}><EDIT/></button>
-                            {user.USERNAME}
-                        </div>}
-                        {usernameEdit && 
-                        <div className="flex text-xl font-bold text-gray-800">
-                            <button className="edit-button" onClick={() => {setUsernameEdit(!usernameEdit); handleUsernameChange();}}><SAVE/></button>
-                            <input ref={usernameRef} placeholder="Enter username:" className="w-full outline-none focus:outline-none rounded-md shadow-md"></input>
-                        </div>}
+                    <div className="text-sm font-bold text-gray-400 lg:space-y-12 xs:space-y-2 w-200">
+                        <div className="xl:space-y-4">
+                            <span className="">
+                                Username:
+                            </span>
+                            {!usernameEdit &&
+                            <div className="flex lg:text-xl font-bold text-gray-800 ">
+                                <button className="edit-button" onClick={() => setUsernameEdit(!usernameEdit)}><EDIT/></button>
+                                {user.USERNAME}
+                            </div>}
+                            {usernameEdit &&
+                            <div className="flex lg:text-xl font-bold text-gray-800">
+                                <button className="edit-button" onClick={() => {setUsernameEdit(!usernameEdit); handleUsernameChange();}}><SAVE/></button>
+                                <input ref={usernameRef} placeholder="Enter username:" className="w-full outline-none focus:outline-none rounded-md shadow-md"></input>
+                            </div>}
+                        </div>
                         
 
                         <div> 
                             <span>Major:</span>
                             {!majorEdit && 
-                            <div className="flex text-xl font-bold text-gray-800 ">
+                            <div className="flex lg:text-xl font-bold text-gray-800 ">
                                 <button className="edit-button" onClick={() => setMajorEdit(!majorEdit)}><EDIT/></button>
                                 {user.MAJOR}
                             </div>}
                             {majorEdit && 
-                            <div className="flex text-xl font-bold text-gray-800">
+                            <div className="flex lg:text-xl font-bold text-gray-800">
                                 <button className="edit-button" onClick={() => {setMajorEdit(!majorEdit); handleMajorChange();}}><SAVE/></button>
                                 <input ref={majorRef} placeholder="Enter major:" className="w-full outline-none focus:outline-none rounded-md shadow-md"></input>
                             </div>}
                         </div>
                         
                     </div>
-                    <div className="text-sm font-bold text-gray-400 space-y-4 w-200">
+                    <div className="text-sm font-bold text-gray-400 lg:space-y-12 xs:space-y-2 w-200">
                         
-                        <span>Name:</span>
-                        {!nameEdit && 
-                        <div className="flex text-xl font-bold text-gray-800 ">
-                            <button className="edit-button" onClick={() => setNameEdit(!nameEdit)}><EDIT/></button>
-                            <div>
-                                {user.FNAME} {user.LNAME}
-                            </div>
-                        </div>}
-                        {nameEdit && 
-                        <div className="flex text-xl font-bold text-gray-800 ">
-                            <button className="edit-button" onClick={() => {setNameEdit(!nameEdit); handleNameChange();}}><SAVE/></button>
-                            <input ref={nameRef} placeholder="Enter name:" className="w-full outline-none focus:outline-none rounded-md shadow-md"></input>
-                        </div>}
+                        <div className="xl:space-y-4">
+                            <span>Name:</span>
+                            {!nameEdit &&
+                            <div className="flex lg:text-xl font-bold text-gray-800 ">
+                                <button className="edit-button" onClick={() => setNameEdit(!nameEdit)}><EDIT/></button>
+                                <div>
+                                    {user.FNAME} {user.LNAME}
+                                </div>
+                            </div>}
+                            {nameEdit &&
+                            <div className="flex lg:text-xl font-bold text-gray-800 ">
+                                <button className="edit-button" onClick={() => {setNameEdit(!nameEdit); handleNameChange();}}><SAVE/></button>
+                                <input ref={nameRef} placeholder="Enter name:" className="w-full outline-none focus:outline-none rounded-md shadow-md"></input>
+                            </div>}
+                        </div>
 
 
                         <div>
                             <span>Degree:</span>
                             {!degreeEdit && 
-                            <div className="flex text-xl font-bold text-gray-800">
+                            <div className="flex lg:text-xl font-bold text-gray-800">
                                 <button className="edit-button" onClick={() => setDegreeEdit(!degreeEdit)}><EDIT/></button>
                                 {user.DEGREE}
                             </div>}
@@ -202,7 +205,7 @@ function UserCardV2(){
                     </div>
 
                     {!gpaEdit &&  
-                    <div className="w-1/6 text-sm font-bold text-gray-400">
+                    <div className="w-1/5 text-sm font-bold text-gray-400">
                         <span className="flex">
                             <button className="edit-button " onClick={() => setGPAEdit(!gpaEdit)}><EDIT/></button>
                             GPA:
@@ -210,7 +213,7 @@ function UserCardV2(){
                         {user.GPA>0 && <GPA percentage={(user.GPA/4)*100} speed={20} strokeColor={"green"}/>}
                     </div>}
                     {gpaEdit &&  
-                    <div className="flex flex-col w-1/6 text-sm font-bold text-gray-400">
+                    <div className="flex flex-col w-1/4 text-sm font-bold text-gray-400">
                         <div className="flex">
                             <button className="edit-button " onClick={() => {setGPAEdit(!gpaEdit); handleGPAChange();}}><SAVE/></button>
                             <input ref={gpaRef} placeholder="GPA:" type="number" step="0.01" min="0" max="4" className="w-1/2 outline-none focus:outline-none rounded-md shadow-md"></input>
@@ -218,8 +221,11 @@ function UserCardV2(){
                     </div>}
                 </div>
 
-                <div className="text-lg font-bold text-gray-400">Your classes:
-                    <div className="flex space-x-4 mt-4 overflow-auto">
+                <div className="text-lg font-bold text-gray-400">
+                    <div>
+                        Your classes:
+                    </div>
+                    <div className="flex space-x-4 mt-4 overflow-auto ">
                         <button className="w-40 bg-primary-light hover:bg-primary text-on-primary-light rounded-lg shadow-lg p-6 text-xl font-bold text-gray-800" 
                                 onClick = {() => handleAddClass()}> 
                             {!addClassesActive && <span className="w-full text-base">Add Class</span>}

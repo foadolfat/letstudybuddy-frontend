@@ -43,7 +43,7 @@ function Dashboard(){
             </div>
 
             <div className="flex md:flex-row-reverse xs:flex-col xs:items-center md:m-0 xs:mb-4 xs:overflow-visible md:overflow-none h-screen w-screen">
-                
+
                 <animated.div className=" xs:mt-56 xs:mb-4 h-full w-full flex justify-center items-center md:m-0 xs:mb-4 xs:pt-4" style={suggestSlide}>
                     <Suggestions/>
                 </animated.div>
