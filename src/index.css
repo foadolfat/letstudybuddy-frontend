@@ -208,6 +208,20 @@
     align-items: center;
   }
 
+.edit-button {
+    --tw-text-opacity: 1;
+    color: rgba(156, 163, 175, var(--tw-text-opacity));
+    font-size: 0.6rem;
+    line-height: 0.5rem;
+    font-weight: 700;
+}
+.edit-button:hover{
+    --tw-text-opacity: 1;
+    color: rgba(0, 0, 0, var(--tw-text-opacity));
+    font-size: 0.6rem;
+    line-height: 0.5rem;
+    font-weight: 700;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

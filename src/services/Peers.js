@@ -1,4 +1,4 @@
-// var url = "http://localhost:5050"
+//var url = "http://localhost:5050"
 var url = "https://letstudybuddy.herokuapp.com"
 
 class Peers{

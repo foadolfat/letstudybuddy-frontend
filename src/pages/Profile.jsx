@@ -2,21 +2,22 @@ import * as React from "react";
 import Navbar from "../components/Navbar";
 // import ClassesDash from "../components/classes/ClassesDash";
 import UserCard from "../components/users/UserCard";
+import UserCardV2 from "../components/users/UserCardV2";
 // import Suggestions from "../components/suggestions/Suggestions";
 
 function Profile(){
     
 
     return(
-        <div className="parent bg-primary-light overflow-x-hidden">
+        <div className="parent bg-gray-300 md:overflow-hidden sm:overflow-x-hidden">
             <div className="">
                 <Navbar inProfile={true}/>
             </div>
             {/* <div className=""><UserCard/></div>
                     <div className=" 2xl:h-700  xl:h-500  lg:h-400  md:h-400  sm:h-400  xs:h-400 "><ClassesDash /></div> */}
             <div className="flex flex-col h-full xs:mt-12 md:mt-0 justify-center ">
-                <div className="flex items-center justify-center ">
-                    <UserCard/>
+                <div className="flex items-center justify-center overflow-none">
+                    <UserCardV2/>
                 </div> 
             </div>
             

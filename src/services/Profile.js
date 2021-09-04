@@ -1,4 +1,4 @@
-// var url = "http://localhost:5050"
+//var url = "http://localhost:5050"
 var url = "https://letstudybuddy.herokuapp.com"
 class Profile{
 
@@ -20,7 +20,30 @@ class Profile{
         
     }
 
-    async updateUser(fName, lName, major, degree, gpa){
+    // async updateUser(request){
+    //     const user = JSON.parse(localStorage.getItem("user"));
+    //     if(user && user.accessToken){
+    //         let response = await fetch(`${url}/user`, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 'x-access-token':`${user.accessToken}`
+    //             },
+    //             body: JSON.stringify({ 
+    //                 request
+    //             })
+    //         })
+    //         if (response.status === 401) {
+    //             localStorage.clear();
+    //             window.open("/Auth","_self");
+    //         }
+    //         else return await response.json();
+    //     }
+        
+    // }
+
+    async updateUser(username, fName, lName, major, degree, gpa){
         const user = JSON.parse(localStorage.getItem("user"));
         if(user && user.accessToken){
             let response = await fetch(`${url}/user`, {
@@ -31,6 +54,7 @@ class Profile{
                     'x-access-token':`${user.accessToken}`
                 },
                 body: JSON.stringify({ 
+                    username: username,
                     fName: fName,
                     lName: lName,
                     major: major,

@@ -8,5 +8,5 @@ if(user && user.accessToken){
     auth: {token}
   });
 }
-
+//http://localhost:5050
 export default socket;
