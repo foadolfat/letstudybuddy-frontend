@@ -107,9 +107,9 @@ function Chat(){
         
                 </Resizable>
                 <div className="flex flex-col flex-grow-1 friends h-full w-full bg-primary rounded-md shadow-lg mt-2 p-4 justify-between">
-                    <PeersDash  setRoom={setRoom}/>
+                    <PeersDash  room= {room} setRoom={setRoom}/>
 
-                    <input type="search" placeholder="Search name or email" className="flex flex-col w-full h-5 text-base rounded-sm shadow-lg p-4 bg-background focus:outline-none"/>
+                    {/* <input type="search" placeholder="Search name or email" className="flex flex-col w-full h-5 text-base rounded-sm shadow-lg p-4 bg-background focus:outline-none"/> */}
                     </div>
         
             </div>

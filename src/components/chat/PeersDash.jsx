@@ -3,7 +3,7 @@ import Peers from "../../services/Peers.js";
 import Peer from "./Peer.jsx";
 import socket from "../../services/SocketService"
 const NEW_PEER = "new_peer_event";
-function PeersDash({setRoom}){
+function PeersDash({room, setRoom}){
     const [peersList, setPeers] = React.useState();
     //const [newPeer, setNewPeer] = React.useState(false);
 
@@ -37,9 +37,9 @@ function PeersDash({setRoom}){
     }, []);
     
     return(
-        <div className=" h-full w-full overflow-auto ">
+        <div className=" h-full w-full flex overflow-auto ">
             {
-                peersList && peersList.length && peersList.map((peer, index) => <Peer key={index} setRoom={setRoom} USERNAME={peer.USERNAME} PEER_ID={peer.PEER_ID} ROOM_ID={peer.ROOM_ID}/> )
+                peersList && peersList.length && peersList.map((peer, index) => <Peer room={room} key={index} setRoom={setRoom} USERNAME={peer.USERNAME} PEER_ID={peer.PEER_ID} ROOM_ID={peer.ROOM_ID}/> )
             }
         </div>
     )
