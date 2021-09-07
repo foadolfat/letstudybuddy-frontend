@@ -7,12 +7,15 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
     const [classes, setClasses] = React.useState();
 
     React.useEffect(() => {
-        console.log(gpa)
-        const api = new PeerClasses();
-        api.getPeerClasses(peer_id).then((newClasses) => {
-            setClasses(newClasses.classes);
-        }).catch((reason => {console.log(reason)}))
-        if(classes) console.log(classes)
+        let mounted = true;
+        if (mounted){    
+            console.log(gpa)
+            const api = new PeerClasses();
+            api.getPeerClasses(peer_id).then((newClasses) => {
+                setClasses(newClasses.classes);
+            }).catch((reason => {console.log(reason)}))
+            if(classes) console.log(classes)}
+        return () => mounted = false;
     },[]);
     
 
@@ -77,7 +80,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                     <div className="flex md:h-28 space-x-4 xs:mt-2 md:mt-4 overflow-auto">
                         {classes && classes.length && classes.map((c, index) =>  { 
                               return <SuggestedPeerClasses
-                                        key={c}
+                                        key={c.USER_ID + c.CLASS_NAME + c.SCHOOL}
                                         user_id={c.USER_ID}
                                         class_name={c.CLASS_NAME}
                                         school={c.SCHOOL}

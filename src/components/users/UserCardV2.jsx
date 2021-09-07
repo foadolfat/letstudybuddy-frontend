@@ -104,23 +104,31 @@ function UserCardV2(){
     }
 
     React.useEffect(() => {
+        let mounted = true;
         const api = new Profile();
-        api.getClasses().then((response) => {
-            console.log(response);
-            if(response.code) setClassesExist(false);
-            else {
-                setClassesExist(true);
-                setClasses(response.classes);
-            }
-        })
+        if(mounted){
+            api.getClasses().then((response) => {
+                console.log(response);
+                if(response.code) setClassesExist(false);
+                else {
+                    setClassesExist(true);
+                    setClasses(response.classes);
+                }
+            })
+        }
+        return () => mounted = false;
     }, [classUpdated]);
 
     React.useEffect(() => {
+        let mounted = true;
         const api = new Profile();
-        api.getUser().then((user) => {
-            setUser(user);
-            localStorage.setItem("chat", JSON.stringify({"name":user.USERNAME}));
-        }).catch((reason => {console.log(reason)}))
+        if(mounted){
+            api.getUser().then((user) => {
+                setUser(user);
+                localStorage.setItem("chat", JSON.stringify({"name":user.USERNAME}));
+            }).catch((reason => {console.log(reason)}))
+        }
+        return () => mounted = false;
     },[updateHappened]);
     
 
@@ -231,8 +239,9 @@ function UserCardV2(){
                             {!addClassesActive && <span className="w-full text-base">Add Class</span>}
                             {addClassesActive && <span className="w-full text-base">Finish Adding</span>}
                         </button>
-                        {classesExist && classes.map((c) =>  { 
+                        {classesExist && classes.map((c, index) =>  { 
                               return <ClassesDashV2
+                                        key={c.user_d + c.class_name}
                                         setClassUpdated={setClassUpdated}
                                         classUpdated={classUpdated}
                                         user_id={c.USER_ID}

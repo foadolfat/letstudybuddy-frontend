@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { string, number, bool } from 'prop-types';
 
 const INITIAL_OFFSET = 25;
@@ -23,18 +23,25 @@ const CircleProgressBarBase = ({
 }) => {
   const [progressBar, setProgressBar] = useState(0);
   const pace = percentage / speed;
-  const updatePercentage = () => {
-    setTimeout(() => {
-      setProgressBar(progressBar + 1);
-    }, pace);
-  };
+  const updatePercentage = useCallback(() => {
+    let mounted = true;
+    if(mounted){
+        setTimeout(() => {
+        setProgressBar(progressBar + 1);
+      }, pace);}
+    return () => mounted = false;
+  }, [progressBar, pace]);
 
   useEffect(() => {
-    if (percentage > 0) updatePercentage();
-  }, [percentage]);
+    let mounted = true;
+    if (mounted && percentage > 0) updatePercentage();
+    return () => mounted = false;
+  },[percentage]);
 
   useEffect(() => {
-    if (progressBar < percentage) updatePercentage();
+    let mounted = true;
+    if (mounted && progressBar < percentage) updatePercentage();
+    return () => mounted = false;
   }, [progressBar]);
 
   return (

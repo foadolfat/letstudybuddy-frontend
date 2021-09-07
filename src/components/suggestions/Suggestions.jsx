@@ -9,22 +9,29 @@ function Suggestions(){
     const [peerSuggestions, setSuggestions] = React.useState();
 
     React.useEffect(() => {
-        const api = new Dashboard();
-        api.suggestions().then((suggs) => {
-            setSuggestions(suggs);
-        }).catch((reason => {console.log(reason)}))
+        let mounted = true;
+        if(mounted){
+            const api = new Dashboard();
+            api.suggestions().then((suggs) => {
+                setSuggestions(suggs);
+            }).catch((reason => {console.log(reason)}))}
+        return () => mounted = false;
     },[]);
 
     const onSwipe = (direction, peer_id) => {
-
-        if(direction==="right"){
+        //let mounted = true;
+        //if(mounted){
+            if(direction==="right"){
             const api = new Dashboard();
             async function fetchData () {
-                await api.addPeer(peer_id).then(() => {console.log("addPeer should be finished by now")} ).then(() => {socket.emit(NEW_PEER, peer_id)});
+                await api.addPeer(peer_id).then(() => {console.log("addPeer should be finished by now")} )
+                        .then(() => {socket.emit(NEW_PEER, peer_id)});
             }
             fetchData()
             
         }
+        //}
+        //return () => mounted = false;
         
         //console.log('You swiped: ' + direction)
     }

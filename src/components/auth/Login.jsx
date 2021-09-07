@@ -9,6 +9,7 @@ function Login({userCreated}){
 	const passwordRef = React.useRef();
     React.useEffect(() => {
         if(userCreated) usernameRef.current.value = userCreated;
+        
 	}, [userCreated]);
 
     const handleSubmit = (e) => {

@@ -9,6 +9,7 @@ import { useSpring, animated } from 'react-spring'
 import { useResizeDetector } from 'react-resize-detector';
 // import GPA from "../assets/icons/GPA.jsx"
 
+
 function Dashboard(){
 
     const mediaMatch = window.matchMedia('(min-width: 765px)');

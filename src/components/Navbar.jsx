@@ -8,6 +8,8 @@ import { ReactComponent as CHATCLOSED } from "../assets/icons/chatclosed.svg"
 function Navbar({onClick, isActive, inProfile}){
     const [loggedIn, setLoggedIn] = React.useState(false);
     const user = JSON.parse(localStorage.getItem("user"));
+    const chat = JSON.parse(localStorage.getItem("chat"));
+
     const handleLogOut = () => {
         localStorage.clear();
         setLoggedIn(!loggedIn);
@@ -96,7 +98,7 @@ function Navbar({onClick, isActive, inProfile}){
                                 exact className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-primary-light border border-transparent rounded-md shadow-sm hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark " 
                                 to='/Profile'
                             >
-                                Profile
+                                {chat && chat.name}
                             </NavLink>
                             
                             

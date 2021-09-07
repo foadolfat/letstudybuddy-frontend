@@ -5,45 +5,56 @@ import socket from "../../services/SocketService"
 import Message from "./Message";
 import Messages from "../../services/Messages";
 
+
 const NEW_MESSAGE_EVENT = "new-message-event";
-//const NEW_PEER = "new_peer_event";
+
+
 let u = '';
 
 function Chat(){
-    //[{content:'', username:'', date_sent:''}]
-    const [messages, setMessages] = React.useState({content:'', username:'', date_sent:''});
 
+    const [messages, setMessages] = React.useState({content:'', username:'', date_sent:''});
     const [room, setRoom] = React.useState();
 
+   
     const contentRef = React.useRef();
+
+
+
     React.useEffect(()=>{
-        socket.on(NEW_MESSAGE_EVENT, (data) => {
+        let mounted = true;
+        socket.on(NEW_MESSAGE_EVENT, (data, intendedRoom) => {
 
-            if(messages && messages.length) setMessages([...messages, data]);
-            else setMessages([data]);
+            if(mounted && intendedRoom === room ) {
+                if(messages && messages.length) setMessages([...messages, data]);
+                else setMessages([data]);
+            }
+
         })
-
+        
         
         return () => {
             socket.off(NEW_MESSAGE_EVENT);
+            mounted = false;
           };
     },[messages])
     
     React.useEffect(() => {
-        const chat = JSON.parse(localStorage.getItem("chat"));
-        if(chat && chat.name ) u = chat.name;
-        if(room){
-            const api = new Messages();
-            api.getMessages(room).then((response) => {
-                setMessages(response.messages);
-            }).catch((reason => {console.log(reason)}))
-        }
+        let mounted = true;
+        if(mounted) {    
+            const chat = JSON.parse(localStorage.getItem("chat"));
+            if(chat && chat.name ) u = chat.name;
+            if(room){
+                const api = new Messages();
+                api.getMessages(room).then((response) => {
+                    setMessages(response.messages);
+                }).catch((reason => {console.log(reason)}))
+            }}
+        return () => mounted = false;
     }, [room]);
 
     const handleClick = () => {
-        
-        
-        
+
         if(contentRef.current.value !== '' && /\S/.test(contentRef.current.value)) {
             let data = {
                 content:contentRef.current.value,
@@ -52,8 +63,8 @@ function Chat(){
             }
             
             socket.emit(NEW_MESSAGE_EVENT, data, room);
-            if(messages && messages.length) setMessages([...messages, data]);
-            else setMessages([data]);
+
+
             
         }
     }
@@ -108,7 +119,7 @@ function Chat(){
                 </Resizable>
                 <div className="flex flex-col flex-grow-1 friends h-full w-full bg-primary rounded-md shadow-lg mt-2 p-4 justify-between">
                     <PeersDash  room= {room} setRoom={setRoom}/>
-
+                    
                     {/* <input type="search" placeholder="Search name or email" className="flex flex-col w-full h-5 text-base rounded-sm shadow-lg p-4 bg-background focus:outline-none"/> */}
                     </div>
         
