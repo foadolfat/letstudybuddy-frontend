@@ -136,11 +136,28 @@ function UserCardV2(){
 
         <div className=" flex flex-col shadow-lg overflow-hidden">
             
-            <div className="bg-primary-light rounded-t-lg xl:w-700 xl:h-350  lg:w-600 lg:h-300  md:w-500 md:h-250  sm:w-400 sm:h-200  xs:w-400 xs:h-200">
+            <div className="bg-primary-light rounded-t-lg 
+                            2xl:w-30v 2xl:h-300 
+                            xl:w-40v xl:h-250  
+                            lg:w-50v lg:h-250  
+                            md:w-50v md:h-250  
+                            sm:w-65v sm:h-200  
+                            xs:w-70v xs:h-200">
                 <img className="object-cover rounded-t-lg w-full h-full" 
                 src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
             </div>
-            <div className="xl:space-y-16 lg:space-y-12 md:space-y-8 xs:space-y-4 bg-gray-200 p-8 text-gray-800 rounded-b-lg xl:w-700 xl:h-500  lg:w-600 lg:h-450  md:w-500 md:h-400  sm:w-400 sm:h-350  xs:w-400 xs:h-350">
+            <div className=" bg-gray-200 xs:p-4 text-gray-800 rounded-b-lg 
+                            xs:space-y-8 
+                            sm:space-y-10 
+                            md:space-y-20 
+                            lg:space-y-4 
+
+                            2xl:w-30v 2xl:h-400      
+                            xl:w-40v xl:h-400  
+                            lg:w-50v lg:h-400  
+                            md:w-50v md:h-400  
+                            sm:w-65v sm:h-350  
+                            xs:w-70v xs:h-350">
            
 
                 <div className="flex justify-between ">
