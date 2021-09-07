@@ -136,11 +136,11 @@ function UserCardV2(){
 
         <div className=" flex flex-col shadow-lg overflow-hidden">
             
-            <div className="bg-primary-light rounded-t-lg 2xl:w-800 2xl:h-400  xl:w-700 xl:h-350  lg:w-600 lg:h-300  md:w-500 md:h-250  sm:w-400 sm:h-200  xs:w-400 xs:h-200">
+            <div className="bg-primary-light rounded-t-lg xl:w-700 xl:h-350  lg:w-600 lg:h-300  md:w-500 md:h-250  sm:w-400 sm:h-200  xs:w-400 xs:h-200">
                 <img className="object-cover rounded-t-lg w-full h-full" 
                 src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
             </div>
-            <div className="xl:space-y-16 lg:space-y-12 md:space-y-8 xs:space-y-4 bg-gray-200 p-8 text-gray-800 rounded-b-lg 2xl:w-800 2xl:h-500  xl:w-700 xl:h-500  lg:w-600 lg:h-450  md:w-500 md:h-400  sm:w-400 sm:h-350  xs:w-400 xs:h-350">
+            <div className="xl:space-y-16 lg:space-y-12 md:space-y-8 xs:space-y-4 bg-gray-200 p-8 text-gray-800 rounded-b-lg xl:w-700 xl:h-500  lg:w-600 lg:h-450  md:w-500 md:h-400  sm:w-400 sm:h-350  xs:w-400 xs:h-350">
            
 
                 <div className="flex justify-between ">

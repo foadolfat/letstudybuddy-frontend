@@ -4,6 +4,7 @@ import * as React from "react"
 import { NavLink} from 'react-router-dom';
 import { ReactComponent as CHATOPEN } from "../assets/icons/chatopen.svg"
 import { ReactComponent as CHATCLOSED } from "../assets/icons/chatclosed.svg"
+import ace from "../assets/pictures/ace.png"
 
 function Navbar({onClick, isActive, inProfile}){
     const [loggedIn, setLoggedIn] = React.useState(false);
@@ -29,15 +30,20 @@ function Navbar({onClick, isActive, inProfile}){
                 }
                 <div className="container flex flex-col flex-wrap items-center justify-between py-3 mx-auto md:flex-row max-w-7xl">
                     
-                    <div className="relative flex flex-col md:flex-row">
+                    <div className="relative flex flex-col  xs:space-x-4 xs:flex-row">
                         
                         {/* <a href="#_" className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
                             <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">Study Buddy<span className="text-primary"></span></span>
                         </a> */}
-                        <NavLink 
+
+                        
+                        <NavLink
                             exact className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
-                            to='/Landing'><span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">Study Buddy<span className="text-primary"></span></span>
+                            to='/Landing'><span className="mx-auto text-xl font-black leading-none text-gray-900 select-none flex items-center">
+                                <img  src={ace} className="w-10 h-10 " alt="logo"/>
+                                Study Buddy<span className="text-primary"></span></span>
                         </NavLink>
+
                         <nav className="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-primary-dark">
                             {/* <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Home</a>
                             <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Features</a>
