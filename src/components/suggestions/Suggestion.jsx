@@ -2,6 +2,9 @@ import * as React from "react"
 import GPA from "../../assets/icons/GPA.jsx"
 import PeerClasses from "../../services/PeerClasses.js";
 import SuggestedPeerClasses from "./SuggestedPeerClasses.jsx";
+import { ReactComponent as ARROW_RIGHT } from "../../assets/icons/long_arrow_right.svg"
+import { ReactComponent as ARROW_LEFT } from "../../assets/icons/long_arrow_left.svg"
+import { ReactComponent as CAP } from "../../assets/icons/cap.svg"
 
 function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}){
     const [classes, setClasses] = React.useState();
@@ -40,6 +43,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                             sm:w-350 sm:h-450  
                             xs:w-350 xs:h-450
                             xxs:w-250 xxs:h-400">
+                <span className="flex justify-between lg:text-base lg:font-bold lg:pb-2 xxs:text-sm xxs:font-thin xxs:pb-0 text-secondary-dark"><ARROW_LEFT/> Swipe left to ignore <CAP/> Swipe right to match<ARROW_RIGHT/></span>
                 <div className="flex xxs:flex-col lg:flex-row xxs:space-y-6 lg:space-y-0 justify-between">
                     <div className="flex xxs:w-full lg:w-3/4">
                         <div className="text-sm font-bold text-gray-400 xxs:space-y-6 lg:space-y-12  w-200">
@@ -89,8 +93,8 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
 
                 <div className="text-lg 
                                 xxs:text-sm  xxs:pt-4
-                                md:text-base md:pt-14
-                                lg:text-lg lg:pt-28
+                                md:text-base md:pt-10
+                                lg:text-lg lg:pt-32
                                 font-bold text-gray-400">
                     Classes in common with you:
                     <div className="flex space-x-4 xxs:mt-1 mt-4 overflow-auto">

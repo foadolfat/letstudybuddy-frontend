@@ -5,6 +5,10 @@ import { ReactComponent as PIG } from "../assets/pictures/pig.svg"
 import { ReactComponent as BEAR } from "../assets/pictures/bear.svg"
 import { ReactComponent as CAT } from "../assets/pictures/cat.svg"
 import { ReactComponent as BOY } from "../assets/pictures/boy.svg"
+import { ReactComponent as CHAT } from "../assets/icons/chatopen.svg"
+import { ReactComponent as EDIT } from "../assets/icons/edit_solid.svg"
+import { ReactComponent as LOGIN } from "../assets/icons/login.svg"
+import { ReactComponent as ARROW_RIGHT } from "../assets/icons/arrow_right.svg"
 import ace from "../assets/pictures/ace.png"
 
 function Landing(){
@@ -115,7 +119,7 @@ function Landing(){
                             exact className="flex items-center px-6 py-3 font-medium text-primary bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
                             smooth to="#how"
                         >
-                            Learn More
+                            How it works
                         </NavHashLink>
 
                     </div>
@@ -127,8 +131,40 @@ function Landing(){
             </section>
 
 
+            <section class="py-20 bg-gray-50" id="how" >
+            <div class="container items-center max-w-6xl  mx-auto sm:px-20 md:px-32 lg:px-16">
+                <div class="flex flex-wrap items-center -mx-3">
+                <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
+                    <div class="w-full lg:max-w-md">
+                    <h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">How to get started:</h2>
+                    
+                    <ul>
+                        <li class="flex items-center py-2 space-x-4 xl:py-3">
+                        <LOGIN/>
+                        <span class="font-medium text-gray-500">Sign up and login to your profile</span>
+                        </li>
+                        <li class="flex items-center py-2 space-x-4 xl:py-3">
+                        <EDIT class="h-8 w-8"/>
+                        <span class="font-medium text-gray-500">Add at least once class in your profile</span>
+                        </li>
+                        <li class="flex items-center py-2 space-x-4 xl:py-3">
+                        <ARROW_RIGHT/>
+                        <span class="font-medium text-gray-500">Go to dashboard and pick your choice of reccomendations by swiping right on their card</span>
+                        </li>
+                        <li class="flex items-center py-2 space-x-4 xl:py-3">
+                        <CHAT/>
+                        <span class="font-medium text-gray-500">Chat with your matches by pressing the chat icon on the top left</span>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="w-full px-3 mb-12 lg:w-1/2 order-0 lg:order-1 lg:mb-0"><img class="mx-auto sm:max-w-sm lg:max-w-full" src="https://cdn.devdojo.com/images/november2020/feature-graphic.png" alt="feature image"/></div>
+                </div>
+            </div>
+            </section>
 
-            <section id="how" className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
+
+            <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
                 <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
 
                     <div className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">

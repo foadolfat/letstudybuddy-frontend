@@ -20,28 +20,6 @@ class Profile{
         
     }
 
-    // async updateUser(request){
-    //     const user = JSON.parse(localStorage.getItem("user"));
-    //     if(user && user.accessToken){
-    //         let response = await fetch(`${url}/user`, {
-    //             method: 'PUT',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json',
-    //                 'x-access-token':`${user.accessToken}`
-    //             },
-    //             body: JSON.stringify({ 
-    //                 request
-    //             })
-    //         })
-    //         if (response.status === 401) {
-    //             localStorage.clear();
-    //             window.open("/Auth","_self");
-    //         }
-    //         else return await response.json();
-    //     }
-        
-    // }
 
     async updateUser(username, fName, lName, major, degree, gpa){
         const user = JSON.parse(localStorage.getItem("user"));
@@ -82,9 +60,9 @@ class Profile{
                 'x-access-token':`${user.accessToken}`
                 },
                 body: JSON.stringify({ 
-                    class_name: c,
-                    school: s,
-                    prof:p
+                    class_name: c.replace(/[^0-9a-z]/gi, '').toUpperCase() ,
+                    school: s.replace(/[^0-9a-z]/gi, '').toUpperCase() ,
+                    prof: p.replace(/[^0-9a-z]/gi, '').toUpperCase() 
                 })
             })
 
@@ -109,8 +87,8 @@ class Profile{
                 'x-access-token':`${user.accessToken}`
                 },
                 body: JSON.stringify({ 
-                    class_name: c,
-                    school: s
+                    class_name: c.replace(/[^0-9a-z]/gi, '').toUpperCase(),
+                    school: s.replace(/[^0-9a-z]/gi, '').toUpperCase()
                 })
             })
 
