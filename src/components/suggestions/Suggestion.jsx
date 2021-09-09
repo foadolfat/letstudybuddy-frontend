@@ -93,8 +93,8 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
 
                 <div className="text-lg 
                                 xxs:text-sm  xxs:pt-4
-                                md:text-base md:pt-10
-                                lg:text-lg lg:pt-32
+                                md:text-base md:pt-8
+                                lg:text-lg lg:pt-28
                                 font-bold text-gray-400">
                     Classes in common with you:
                     <div className="flex space-x-4 xxs:mt-1 mt-4 overflow-auto">
