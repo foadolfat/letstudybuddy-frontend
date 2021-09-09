@@ -1,42 +1,60 @@
 import * as React from "react";
+import Chat from "../components/chat/Chat";
+import { useState, useEffect }from "react";
 import Navbar from "../components/Navbar";
-// import ClassesDash from "../components/classes/ClassesDash";
-import UserCard from "../components/users/UserCard";
 import UserCardV2 from "../components/users/UserCardV2";
-// import Suggestions from "../components/suggestions/Suggestions";
+import { useSpring, animated } from 'react-spring'
+import { useResizeDetector } from 'react-resize-detector';
 
 function Profile(){
-    
+    const mediaMatch = window.matchMedia('(min-width: 765px)');
+    const [matches, setMatches] = useState(mediaMatch.matches);
+    const [notification, setNotification] = React.useState(false);
+    const { width, ref } = useResizeDetector();
+    const [isActive, setIsActive] = useState(false);
+    const w = width ? -width/2 : -200;
+    const onClick = () => {
+        setNotification(false)
+        setIsActive(!isActive);
+    }
+
+    useEffect(() => {
+        const handler = e => setMatches(e.matches);
+        mediaMatch.addListener(handler);
+        return () => mediaMatch.removeListener(handler);
+    });
+
+
+    const chatSlide = useSpring({
+        transform: isActive ? `translate3d(0%,0,0)` : `translate3d(-200%,0,0)`,
+
+    })
+    const suggestSlide = useSpring({ 
+        transform: isActive || !matches ? `translateX(0px)` : `translateX(${w}px)`
+
+    })
 
     return(
-        <div className="parent bg-gray-300 md:overflow-hidden sm:overflow-x-hidden">
+        <div className="parent xs:flex xs:flex-col bg-gray-300">
             <div className="">
-                <Navbar inProfile={true}/>
+                <Navbar onClick={onClick} notification={notification} isActive={isActive} inProfile={true}/>
             </div>
-            {/* <div className=""><UserCard/></div>
-                    <div className=" 2xl:h-700  xl:h-500  lg:h-400  md:h-400  sm:h-400  xs:h-400 "><ClassesDash /></div> */}
-            <div className="flex flex-col w-full h-full xs:mt-12 md:mt-0 justify-center ">
-                <div className="flex items-center justify-center overflow-none">
+
+            <div className="flex md:flex-row-reverse xxs:flex-col xxs:items-center md:m-0 xs:mb-4 xxs:overflow-visible md:overflow-none h-screen w-screen">
+
+                <animated.div className="  xxs:mb-4 h-full w-full flex justify-center items-center md:m-0 xxs:pt-4" style={suggestSlide}>
                     <UserCardV2/>
-                </div> 
+                </animated.div>
+
+
+                <animated.div ref={ref} className=" md:mt-0 md:ml-4" style={chatSlide}>
+                    <Chat setNotification={setNotification} toggle={isActive} />
+                </animated.div>
+
             </div>
-            
-            {/* <div className="flex md:flex-row xs:flex-col xs:items-center md:m-0 xs:mb-4 xs:overflow-visible md:overflow-none h-screen w-screen"> */}
-                {/* <div className="w-full h-full flex flex-row items-center justify-center"> */}
-                    {/* <div className="xs:mb-4 h-full w-full md:m-0 xs:mb-4 xs:pt-4"> */}
-                        {/* <div className=""> */}
-                            {/* <div className="flex h-full  w-full flex-row justify-center items-center xs:mb-4 md:m-0 xs:mb-4 xs:pt-4 md:flex-row xs:flex-col xs:items-center xs:mb-4 xs:overflow-visible md:overflow-none">
-                                <div className="flex justify-center items-center"><UserCard/></div>
-                                <div className="flex  2xl:h-700  xl:h-500  lg:h-400  md:h-400  sm:h-400  xs:h-400 items-center"><ClassesDash /></div>
-                            </div>
-                            <div className="">
-                                 */}
-                            {/* </div> */}
-                        {/* </div> */}
-                    {/* </div> */}             
-                {/* </div> */}
-            {/* </div> */}
-        </div>
+
+
+        </div> 
     )
     
 }

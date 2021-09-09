@@ -20,8 +20,10 @@ module.exports = {
       'full': '100%'
     },
     screens:{
-      'xs': '0px',
+      'xxs': '0px',
       // => @media (min-width: 0px) { ... }
+
+      'xs': '400px',
 
       'sm': '640px',
       // => @media (min-width: 640px) { ... }

@@ -4,7 +4,7 @@ import Peer from "./Peer.jsx";
 import socket from "../../services/SocketService"
 import Notifications from "../../services/Notifications";
 const NEW_PEER = "new_peer_event";
-function PeersDash({room, setRoom}){
+function PeersDash({room, setRoom, setNotification}){
     const [peersList, setPeers] = React.useState();
     //const [newPeer, setNewPeer] = React.useState(false);
     const [notifications, setNotiications] = React.useState([]);
@@ -47,8 +47,8 @@ function PeersDash({room, setRoom}){
         let mounted = true;
         if(mounted){    
             const api = new Peers();
-            async function fetchData () {await api.getPeers().then((peers) => {
-                // console.log(peers.peers[0].USERNAME)
+            async function fetchData () {
+                await api.getPeers().then((peers) => {
                 setPeers(peers.peers);
                 console.log("setting peers for first time")
             }).catch((reason => {console.log(reason)}))}
@@ -60,7 +60,7 @@ function PeersDash({room, setRoom}){
     return(
         <div className=" h-full w-full flex flex-wrap overflow-auto ">
             {
-                peersList && peersList.length && peersList.map((peer, index) => <Peer notifications={notifications} room={room} key={index} setRoom={setRoom} USERNAME={peer.USERNAME} PEER_ID={peer.PEER_ID} ROOM_ID={peer.ROOM_ID}/> )
+                peersList && peersList.length && peersList.map((peer, index) => <Peer setNotification={setNotification} notifications={notifications} room={room} key={index} setRoom={setRoom} USERNAME={peer.USERNAME} PEER_ID={peer.PEER_ID} ROOM_ID={peer.ROOM_ID}/> )
             }
         </div>
     )

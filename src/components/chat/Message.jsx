@@ -34,33 +34,7 @@ function Message({content, username, date}){
                     </div>
                 </div>
             }
-            {/* { currentUser && 
-                <div className="">
-                    <div className="text-xs text-gray-400">{username}</div>
-                    <div className="w-full">
-                        <div className="p-2 text-base font-serif break-words h-full max-w-3/4 bg-blue-400 text-gray-800 rounded-3xl shadow-lg float-left">
-                            {content}
-                        </div>
-                    </div>
-                </div>
-            }
-            { !currentUser &&
-                
-                <div className="">
-                    <div className="text-xs text-gray-400">{username}</div>
-                    <div className="w-full">
-                        <div className="p-2 text-base font-sans-serif Break break-words h-full max-w-3/4 bg-green-400 text-gray-800 rounded-3xl shadow-lg float-right">
-                            {content}
-                        </div>
-                    </div>
-                </div>
-            } */}
-            {/* {content}
-            {username} */}
-            {/* {date} */}
-            {/* {content}
-            {username}
-            {date} */}
+
         </div>
     )
 }

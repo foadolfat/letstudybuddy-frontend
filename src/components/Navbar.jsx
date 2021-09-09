@@ -6,8 +6,9 @@ import { ReactComponent as CHATOPEN } from "../assets/icons/chatopen.svg"
 import { ReactComponent as CHATCLOSED } from "../assets/icons/chatclosed.svg"
 import ace from "../assets/pictures/ace.png"
 
-function Navbar({onClick, isActive, inProfile}){
+function Navbar({onClick, isActive, inProfile, notification}){
     const [loggedIn, setLoggedIn] = React.useState(false);
+    
     const user = JSON.parse(localStorage.getItem("user"));
     const chat = JSON.parse(localStorage.getItem("chat"));
 
@@ -19,15 +20,28 @@ function Navbar({onClick, isActive, inProfile}){
     return(
         <div className="flex w-screen ">
             <section className="w-full px-8 text-gray-700 bg-secondary md:flex">
-                {!inProfile &&
+                {notification &&
                         <div className="md:inline-flex items-center mr-4 space-x-6 lg:justify-end hidden ">
-                            <button className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900 " type="button" onClick={onClick}>
+                            <button className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap 
+                                                transition duration-150 ease-in-out hover:text-gray-900 animate-bounce" 
+                                                type="button" onClick={onClick}>
                                 {isActive && <CHATOPEN/>}
                                 {!isActive && <CHATCLOSED/>}
                             </button>
                         </div>
                     
-                }
+                 }
+                 {!notification &&
+                        <div className="md:inline-flex items-center mr-4 space-x-6 lg:justify-end hidden ">
+                            <button className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap 
+                                                transition duration-150 ease-in-out hover:text-gray-900" 
+                                                type="button" onClick={onClick}>
+                                {isActive && <CHATOPEN/>}
+                                {!isActive && <CHATCLOSED/>}
+                            </button>
+                        </div>
+                    
+                 }
                 <div className="container flex flex-col flex-wrap items-center justify-between py-3 mx-auto md:flex-row max-w-7xl">
                     
                     <div className="relative flex flex-col  xs:space-x-4 xs:flex-row">
@@ -49,10 +63,10 @@ function Navbar({onClick, isActive, inProfile}){
                             <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Features</a>
                             <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
                             <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Blog</a> */}
-                            <NavLink 
+                            {/* <NavLink 
                                 exact className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900 " 
                                 to='/Landing'>Home
-                            </NavLink>
+                            </NavLink> */}
                             {/* <NavLink 
                                 exact className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900" 
                                 to='/Profile'>Features
@@ -70,6 +84,30 @@ function Navbar({onClick, isActive, inProfile}){
 
                     {inProfile && 
                         <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
+                            
+                            <div className="inline-flex items-center mr-1 space-x-6 justify-end">
+
+                                {!notification &&
+                                    <button className="text-base font-medium leading-6 text-gray-600 
+                                                        whitespace-no-wrap transition duration-150 ease-in-out 
+                                                        hover:text-gray-900 md:invisible " 
+                                                        type="button" onClick={onClick}>
+                                        {isActive && <CHATOPEN/>}
+                                        {!isActive && <CHATCLOSED/>}
+                                    </button>
+                                }
+                                {notification &&
+                                    <button className="text-base font-medium leading-6 text-gray-600 
+                                                        whitespace-no-wrap transition duration-150 ease-in-out 
+                                                        hover:text-gray-900 md:invisible animate-bounce" 
+                                                        type="button" onClick={onClick}>
+                                        {isActive && <CHATOPEN/>}
+                                        {!isActive && <CHATCLOSED/>}
+                                    </button>
+                                }
+
+                            </div>
+                            
                             <button 
                                 className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900" 
                                 onClick={handleLogOut}
@@ -84,12 +122,27 @@ function Navbar({onClick, isActive, inProfile}){
                         </div>}
                     {!inProfile &&
                         <div className="inline-flex items-center ml-1 space-x-6">
-                            <div className="inline-flex items-center mr-1 space-x-6 justify-end">
-                                <button className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900 md:invisible" type="button" onClick={onClick}>
-                                    {isActive && <CHATOPEN/>}
-                                    {!isActive && <CHATCLOSED/>}
-                                </button>
-                            </div>
+                            
+                                <div className="inline-flex items-center mr-1 space-x-6 justify-end">
+                                    {!notification &&
+                                        <button className="text-base font-medium leading-6 text-gray-600 
+                                                            whitespace-no-wrap transition duration-150 ease-in-out 
+                                                            hover:text-gray-900 md:invisible " 
+                                                            type="button" onClick={onClick}>
+                                            {isActive && <CHATOPEN/>}
+                                            {!isActive && <CHATCLOSED/>}
+                                        </button>
+                                    }
+                                    {notification &&
+                                        <button className="text-base font-medium leading-6 text-gray-600 
+                                                            whitespace-no-wrap transition duration-150 ease-in-out 
+                                                            hover:text-gray-900 md:invisible animate-bounce" 
+                                                            type="button" onClick={onClick}>
+                                            {isActive && <CHATOPEN/>}
+                                            {!isActive && <CHATCLOSED/>}
+                                        </button>
+                                    }
+                                </div>
                             
                             { user && user.accessToken ?
                         <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">

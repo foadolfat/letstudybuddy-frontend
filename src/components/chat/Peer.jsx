@@ -7,7 +7,7 @@ const NEW_ROOM = "new-room-event";
 const NEW_MESSAGE_ALERT = "new-message-alert";
 const NEW_PEER = "new_peer_event";
 
-function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom}){
+function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom, setNotification}){
     const [currentRoom, setCurrentRoom] = React.useState(false);
     const [newPeer, setNewPeer] = React.useState(false)
     const [newMessageAlert, setNewMessageAlert] = React.useState(false)
@@ -18,9 +18,11 @@ function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom}){
         if(ROOM_ID && notifications && notifications.length){
             for(let notification of notifications){
                 if(notification.ROOM_ID === ROOM_ID && notification.EVENT_KEY === NEW_MESSAGE_ALERT){
+                    setNotification(true);
                     setNewMessageAlert(true);
                     break;
                 } else if(notification.ROOM_ID === ROOM_ID && notification.EVENT_KEY === NEW_PEER){
+                    setNotification(true);
                     setNewPeer(true);
                     
                 }
@@ -34,10 +36,14 @@ function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom}){
     React.useEffect(() => {
         
         socket.on(NEW_MESSAGE_ALERT, (intendedRoom) => {
+            setNotification(true);
             console.log("recieved a notification");
 
-            if(intendedRoom === ROOM_ID)
+            if(intendedRoom === ROOM_ID ){
+                
                 setNewMessageAlert(true);
+            }
+                
 
         })
         return () => {
@@ -50,7 +56,7 @@ function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom}){
 
 
     React.useEffect(()=>{
-        if(ROOM_ID === room) { 
+        if(ROOM_ID === room) {
             setCurrentRoom(true);
             setNewMessageAlert(false);
             setNewPeer(false);
@@ -62,6 +68,7 @@ function Peer({notifications, room, USERNAME, PEER_ID, ROOM_ID, setRoom}){
     },[room])
 
     const deleteNotifications = () => {
+
         let mounted = true;
         if(mounted){  
         const api = new Notifications();

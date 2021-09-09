@@ -11,11 +11,11 @@ const NEW_MESSAGE_EVENT = "new-message-event";
 
 let u = '';
 
-function Chat(){
+function Chat({setNotification}){
 
     const [messages, setMessages] = React.useState({content:'', username:'', date_sent:''});
     const [room, setRoom] = React.useState();
-
+    
    
     const contentRef = React.useRef();
 
@@ -24,7 +24,7 @@ function Chat(){
     React.useEffect(()=>{
         let mounted = true;
         socket.on(NEW_MESSAGE_EVENT, (data, intendedRoom) => {
-
+            
             if(mounted && intendedRoom === room ) {
                 if(messages && messages.length) setMessages([...messages, data]);
                 else setMessages([data]);
@@ -72,10 +72,10 @@ function Chat(){
 
         <Resizable
             defaultSize={{
-                width:400,
+                width:300,
                 height:"90vh",
             }}
-            minWidth={400}
+            minWidth={300}
             maxWidth={"50vw"}
             enable={{
                 top:false,
@@ -118,7 +118,7 @@ function Chat(){
         
                 </Resizable>
                 <div className="flex flex-col flex-grow-1 friends h-full w-full bg-primary rounded-md shadow-lg mt-2 p-4 justify-between">
-                    <PeersDash  room= {room} setRoom={setRoom}/>
+                    <PeersDash setNotification={setNotification}  room= {room} setRoom={setRoom}/>
                     
                     {/* <input type="search" placeholder="Search name or email" className="flex flex-col w-full h-5 text-base rounded-sm shadow-lg p-4 bg-background focus:outline-none"/> */}
                     </div>
