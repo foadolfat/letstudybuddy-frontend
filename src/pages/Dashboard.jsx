@@ -48,12 +48,12 @@ function Dashboard(){
 
             <div className="flex md:flex-row-reverse xxs:flex-col xxs:items-center md:m-0 xs:mb-4 xxs:overflow-visible md:overflow-none h-screen w-screen">
 
-                <animated.div className=" xxs:mt-4 xxs:mb-2 h-full w-full flex justify-center items-center md:m-0 xs:mb-4 xs:pt-4" style={suggestSlide}>
+                <animated.div className=" xxs:mt-56 xxs:mt-4 xxs:mb-2 h-full w-full flex justify-center items-center md:m-0 xs:mb-4 xs:pt-4" style={suggestSlide}>
                     <Suggestions/>
                 </animated.div>
 
 
-                <animated.div ref={ref} className="xxs:mt-4 md:mt-0 md:ml-4" style={chatSlide}>
+                <animated.div ref={ref} className="xxs:mt-56 xxs:mt-4 md:mt-0 md:ml-4" style={chatSlide}>
                     <Chat setNotification={setNotification} toggle={isActive} />
                 </animated.div>
 
