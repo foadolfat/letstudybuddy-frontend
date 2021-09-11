@@ -45,7 +45,7 @@ function Suggestions(){
 
     return (
  
-        <div className="transform transition duration-500 hover:scale-110">
+        <div className="transform transition duration-500 hover:scale-110 ">
             <div className=" flex flex-col items-center justify-center overflow-hidden ">
                 {!fetchInProgress && 
                     <div className="flex  items-center justify-center overflow-hidden ">
@@ -66,7 +66,7 @@ function Suggestions(){
                             <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg text-xl font-bold
             
                                         xxs:p-4 lg:p-8 
-            
+                                        
             
                                         2xl:w-500 2xl:h-500
                                         xl:w-500 xl:h-500  

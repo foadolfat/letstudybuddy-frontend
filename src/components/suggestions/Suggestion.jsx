@@ -26,11 +26,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
 
         <div className=" flex flex-col shadow-lg ">
             
-            {/* <div className="bg-primary-light rounded-t-lg 2xl:w-600 2xl:h-350  xl:w-500 xl:h-300  lg:w-400 lg:h-200  md:w-350 md:h-200  sm:w-350 sm:h-200  xs:w-350 xs:h-200">
-                <img className="object-cover rounded-t-lg w-full h-full" 
-                src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
-            </div> */}
-            {/* <div className="flex flex-col justify-between bg-gray-200 xs:p-4 lg:p-8 text-gray-800 rounded-b-lg  xl:space-y-8 2xl:w-600 2xl:h-400  xl:w-500 xl:h-400  lg:w-400 lg:h-350  md:w-350 md:h-300  sm:w-350 sm:h-250  xs:w-350 xs:h-250"> */}
+            
             <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg 
 
                             xxs:p-4 lg:p-8 
