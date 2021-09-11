@@ -57,12 +57,12 @@ function Auth () {
                 <ParallaxLayer  offset={0.75} speed={0}>
                 <div className="bg-secondary text-on-primary flex flex-row w-150% h-full shadow-xl " >
                     <button className="w-full flex flex-row justify-start items-center bg-transparent" onClick={() => parallax.scrollTo(2)}> 
-                        <div className="absolute xxs:text-base xs:text-3xl font-bold pl-4">Sign up</div> <RIGHT className="absolute xs:invisible sm:visible sm:w-60 sm:h-60 lg:w-96 lg:h-96"/> </button>
+                        <div className="absolute xxs:text-xl xs:text-3xl font-bold pl-4 transform xxs:rotate-90">Sign up</div> <RIGHT className="absolute xs:invisible sm:visible sm:w-60 sm:h-60 lg:w-96 lg:h-96"/> </button>
 
                     <div  className="w-200% bg-transparent"/>
 
                     <button  className="w-full flex flex-row justify-end items-center  bg-transparent" onClick={() => parallax.scrollTo(0)}> 
-                        <LEFT  className="absolute xs:invisible sm:visible sm:w-60 sm:h-60 lg:w-96 lg:h-96"/> <div className="absolute font-bold xxs:text-base xs:text-3xl pr-4">Sign in</div></button>
+                        <LEFT  className="absolute xs:invisible sm:visible sm:w-60 sm:h-60 lg:w-96 lg:h-96"/> <div className="absolute font-bold xxs:text-xl xs:text-3xl pr-4 transform xxs:-rotate-90">Sign in</div></button>
                 </div>
                 </ParallaxLayer>
             </Parallax>
