@@ -11,7 +11,9 @@ import { ReactComponent as RIGHT } from "../assets/icons/chevron_right.svg"
 function Auth () {
     const [userCreated, setUserCreated] = React.useState();
 
-
+    React.useEffect(() => {
+        parallax.scrollTo(0)
+    },[userCreated])
 
     let parallax;
     return (
