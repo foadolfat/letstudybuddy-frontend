@@ -96,7 +96,7 @@ function Landing(){
             <section className="px-2 pt-32 bg-primary-light md:px-0">
                 <div className="container items-center max-w-6xl px-5 mx-auto space-y-6 text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight text-left text-on-primary-light sm:text-5xl md:text-6xl md:text-center">
-                        <span className="block">Find Your <span className="block mt-1 text-secondary lg:inline lg:mt-0">Study Buddy</span></span>
+                        <span className="block">Find Your <span className="block mt-1 text-secondary lg:inline lg:mt-0">Ace Study Buddy</span></span>
                     </h1>
                     <p className="w-full mx-auto text-base text-left text-on-primary-light md:max-w-md sm:text-lg lg:text-2xl md:text-center">
                         Modern tool to find the perfect study partner!
@@ -420,7 +420,7 @@ function Landing(){
                     </div>
                     <p className="mt-8 text-base leading-6 text-center text-gray-400">
                         {/* © 2021 SomeCompany, Inc. All rights reserved. */}
-                        LetStudyBuddy
+                        AceStudyBuddy
                     </p>
                 </div>
             </section>
