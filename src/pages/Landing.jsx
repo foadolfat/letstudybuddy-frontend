@@ -141,19 +141,19 @@ function Landing(){
                     <ul>
                         <li class="flex items-center py-2 space-x-4 xl:py-3">
                         <LOGIN/>
-                        <span class="font-medium text-gray-500">Sign up and login to your profile</span>
+                        <span class="font-medium text-gray-500"><strong>Sign up</strong> and <strong>Login</strong> to your profile</span>
                         </li>
                         <li class="flex items-center py-2 space-x-4 xl:py-3">
                         <EDIT class="h-8 w-8"/>
-                        <span class="font-medium text-gray-500">Add at least once class in your profile</span>
+                        <span class="font-medium text-gray-500">Add at least one class to your <strong>Profile</strong></span>
                         </li>
                         <li class="flex items-center py-2 space-x-4 xl:py-3">
                         <ARROW_RIGHT/>
-                        <span class="font-medium text-gray-500">Go to dashboard and pick your choice of reccomendations by swiping right on their card</span>
+                        <span class="font-medium text-gray-500">Go to <strong>Dashboard</strong> and pick your choice of reccomendations by <strong>swiping</strong> right on their card</span>
                         </li>
                         <li class="flex items-center py-2 space-x-4 xl:py-3">
                         <CHAT/>
-                        <span class="font-medium text-gray-500">Chat with your matches by pressing the chat icon on the top left</span>
+                        <span class="font-medium text-gray-500"><strong>Chat</strong> with your matches by pressing the chat icon on the top left</span>
                         </li>
                     </ul>
                     </div>

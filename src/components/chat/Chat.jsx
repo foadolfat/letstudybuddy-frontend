@@ -63,11 +63,20 @@ function Chat({setNotification}){
             }
             
             socket.emit(NEW_MESSAGE_EVENT, data, room);
-
+            contentRef.current.value = "";
 
             
         }
     }
+
+    const handleKeypress = e => {
+
+      if (e.key === "Enter") {
+        handleClick();
+      }
+    };
+
+
     return(
 
         <Resizable
@@ -109,7 +118,7 @@ function Chat({setNotification}){
                                 <AlwaysScrollToBottom />
                             </div>
                             <div className="flex space-x-2">
-                                <input ref={contentRef} type="text" placeholder="Enter message" className="w-full h-5 text-base shadow-lg p-4 bg-background rounded-md focus:outline-none text-black"/>
+                                <input ref={contentRef} onKeyPress={handleKeypress} type="text" placeholder="Enter message" className="w-full h-5 text-base shadow-lg p-4 bg-background rounded-md focus:outline-none text-black"/>
                                 <button onClick={handleClick} className="rounded-md w-1/4 text-on-secondary bg-secondary hover:bg-secondary-dark">Send</button>
                             </div>
                         </div>
