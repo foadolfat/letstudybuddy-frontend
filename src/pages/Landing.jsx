@@ -34,10 +34,10 @@ function Landing(){
                         </NavLink>
                         <nav className="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-primary-dark">
 
-                            <NavLink 
+                            {/* <NavLink 
                                 exact className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900 " 
                                 to='/Landing'>Home
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink 
                                 exact className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900" 
                                 to='/Dashboard'>Dashboard

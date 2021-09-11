@@ -1,7 +1,8 @@
 // var url = "http://localhost:5050"
 var url = "https://letstudybuddy.herokuapp.com"
 class Auth{
-    async suggestions(){
+    async suggestions(setFetchInProgress){
+        setFetchInProgress(true);
         const user = JSON.parse(localStorage.getItem("user"));
         if(user && user.accessToken){
             let response = await fetch(`${url}/suggestions`, {
@@ -16,7 +17,11 @@ class Auth{
                 localStorage.clear();
                 window.open("/Auth","_self");
             }
-            else return await response.json();
+            
+            else {
+                setFetchInProgress(false);
+                return await response.json();
+            }
         }
         else{
             localStorage.clear();

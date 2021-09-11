@@ -2,7 +2,8 @@
 var url = "https://letstudybuddy.herokuapp.com"
 class Profile{
 
-    async getUser(){
+    async getUser(setFetchUserInProgress){
+        setFetchUserInProgress(true);
         const user = JSON.parse(localStorage.getItem("user"));
         if(user && user.accessToken){
             let response = await fetch(`${url}/user`, {
@@ -14,6 +15,7 @@ class Profile{
                 }
             })
             const result = await response.json();
+            setFetchUserInProgress(false);
             //console.log(result)
             return result;
         }
@@ -102,7 +104,8 @@ class Profile{
         return {message:"No input!"};
     }
 
-    async getClasses(){
+    async getClasses(setFetchClassInProgress){
+        setFetchClassInProgress(true);
         const user = JSON.parse(localStorage.getItem("user"));
         if(user && user.accessToken){
             let response = await fetch(`${url}/classes`, {
@@ -117,7 +120,10 @@ class Profile{
                 localStorage.clear();
                 window.open("/Auth","_self");
             }
-            else return await response.json();
+            else {
+                setFetchClassInProgress(false);
+                return await response.json();
+            }
         }
         
     }

@@ -6,10 +6,12 @@ import ClassesDashV2 from "../classes/ClassesDashV2.jsx";
 import {ReactComponent as EDIT} from "../../assets/icons/edit_solid.svg"
 import {ReactComponent as SAVE} from "../../assets/icons/check_solid.svg"
 import { useSpring, animated } from 'react-spring'
-
+import Loader from "react-loader-spinner";
 
 
 function UserCardV2(){
+    const[fetchUserInProgress, setFetchUserInProgress] = React.useState(false);
+    const[fetchClassInProgress, setFetchClassInProgress] = React.useState(false);
     const [user, setUser] = React.useState({});
     const [classes, setClasses] = React.useState([]);
 
@@ -107,7 +109,7 @@ function UserCardV2(){
         let mounted = true;
         const api = new Profile();
         if(mounted){
-            api.getClasses().then((response) => {
+            api.getClasses(setFetchClassInProgress).then((response) => {
                 console.log(response);
                 if(response.code) setClassesExist(false);
                 else {
@@ -123,7 +125,7 @@ function UserCardV2(){
         let mounted = true;
         const api = new Profile();
         if(mounted){
-            api.getUser().then((user) => {
+            api.getUser(setFetchUserInProgress).then((user) => {
                 setUser(user);
                 localStorage.setItem("chat", JSON.stringify({"name":user.USERNAME}));
             }).catch((reason => {console.log(reason)}))
@@ -135,32 +137,7 @@ function UserCardV2(){
     return(
 
         <div className="shadow-lg  overflow-hidden ">
-            
-            {/* <div className="bg-primary-light rounded-t-lg 
-                            2xl:w-30v 2xl:h-300 
-                            xl:w-40v xl:h-250  
-                            lg:w-50v lg:h-250  
-                            md:w-50v md:h-250  
-                            sm:w-65v sm:h-200  
-                            xs:w-70v xs:h-200">
-                <img className="object-cover rounded-t-lg w-full h-full" 
-                src="https://mymindmybody.net/wp-content/uploads/2018/12/Work-in-Progress-1024x1024.png" alt={"profilepic"}/>
-            </div> */}
-            {/* <div className=" bg-gray-200 xs:p-4 text-gray-800 rounded-b-lg 
-                            xs:space-y-8 
-                            sm:space-y-10 
-                            md:space-y-20 
-                            lg:space-y-4 
-                            2xl:w-30v 2xl:h-400      
-                            xl:w-40v xl:h-400  
-                            lg:w-50v lg:h-400  
-                            md:w-50v md:h-400  
-                            sm:w-65v sm:h-350  
-                            xs:w-70v xs:h-350"> 
-                            xl:space-y-8 
-                            sm:space-y-12
-                            xs:space-y-4
-                            xxs:space-y-4*/}
+
            <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg 
 
                             xxs:p-4 lg:p-8 
@@ -174,7 +151,7 @@ function UserCardV2(){
                             xs:w-350 xs:h-450
                             xxs:w-250 xxs:h-400">
 
-                <div className="flex xxs:flex-col lg:flex-row xxs:space-y-6 lg:space-y-0 justify-between">
+                {!fetchUserInProgress && <div className="flex xxs:flex-col lg:flex-row xxs:space-y-6 lg:space-y-0 justify-between">
                     <div className="flex xxs:w-full lg:w-3/4">
                         <div className="text-sm font-bold text-gray-400 xxs:space-y-6 lg:space-y-12  w-200">
                             <div className="space-y-4 xxs:space-y-1">
@@ -260,9 +237,12 @@ function UserCardV2(){
                             </div>
                         </div>}
                     </div>
-                </div>
+                </div>}
+                {fetchUserInProgress&&
+                    <Loader type="ThreeDots" color="bg-secondary" height="100" width="100" />
+                }
 
-                <div className="text-lg 
+                {!fetchClassInProgress && <div className="text-lg 
                                 xxs:text-sm  xxs:pt-4
                                 md:text-base md:pt-14
                                 lg:text-lg lg:pt-28
@@ -288,9 +268,12 @@ function UserCardV2(){
                                         prof={c.PROF}/>
                           })}
                     </div>
-                </div>
+                </div>}
+                {fetchClassInProgress&&
+                    <Loader type="ThreeDots" color="bg-secondary" height="100" width="100" />
+                }
 
-                <animated.div className="bg-secondary h-full w-full rounded-lg shadow-lg flex flex-col p-4 justify-center items-center " style={addClassSlide}>
+                {!fetchClassInProgress && <animated.div className="bg-secondary h-full w-full rounded-lg shadow-lg flex flex-col p-4 justify-center items-center " style={addClassSlide}>
                     <div>
                         <div className="text-gray-700 font-bold">Class Name</div>
                         <input ref={classNameRef} required className="rounded-md shadow-md w-full text-base xxs:text-sm md:text-base font-bold p-2 outline-none focus:outline-none" placeholder="Enter Class Name"/>
@@ -305,7 +288,10 @@ function UserCardV2(){
                         <div className="text-gray-700 font-bold">School</div>
                         <input ref={schoolRef} required className="rounded-md shadow-md w-full text-base xxs:text-sm md:text-base font-bold p-2 outline-none focus:outline-none" placeholder="Enter School"/>
                     </div>
-                </animated.div>
+                </animated.div>}
+                {fetchClassInProgress&&
+                    <Loader type="ThreeDots" color="bg-secondary" height="100" width="100" />
+                }
             </div>
         </div>
 

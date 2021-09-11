@@ -36,21 +36,21 @@ function Login({userCreated}){
     
     return(
        
-            <div className="flex justify-center ">
+            <div className="flex justify-center m-2">
                 {!fetchInProgress && 
                     <form onSubmit={handleSubmit}>
 
-                        <div className="bg-white rounded-lg border shadow-lg p-12 w-full h-full relative">
+                        <div className="bg-white rounded-lg border shadow-lg  xxs:p-4 md:p-12 xxs:w-full md:w-full h-full relative ">
                             <div className="text-2xl text-black font-bold ">Sign in:</div>
                             <div className="grid grid-cols-1 gap-1 field mt-12">
 
-                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
+                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
                                     type="text" name="username"  placeholder="Username" ref={usernameRef}/>
 
-                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
+                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
                                     type="password" name="pass"  placeholder="Password" ref={passwordRef }/>
                                 
-                                <button type="submit" className=" border-gray-300  bg-secondary hover:bg-secondary-dark h-10 rounded-lg text-sm focus:outline-none inset-x-center signinbuttonmargin w-60 text-white font-bold" >
+                                <button type="submit" className=" border-gray-300  bg-secondary hover:bg-secondary-dark h-10 rounded-lg text-sm focus:outline-none inset-x-center signinbuttonmargin md:w-60 text-white font-bold" >
                                     Sign in
                                 </button>
                             </div>

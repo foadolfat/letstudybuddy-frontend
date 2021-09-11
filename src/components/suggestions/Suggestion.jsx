@@ -34,7 +34,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
             <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg 
 
                             xxs:p-4 lg:p-8 
-
+                            
 
                             2xl:w-500 2xl:h-500
                             xl:w-500 xl:h-500  
@@ -46,7 +46,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                 <span className="flex justify-between lg:text-base lg:font-bold lg:pb-2 xxs:text-sm xxs:font-thin xxs:pb-0 text-secondary-dark"><ARROW_LEFT/> Swipe left to ignore <CAP/> Swipe right to match<ARROW_RIGHT/></span>
                 <div className="flex xxs:flex-col lg:flex-row xxs:space-y-6 lg:space-y-0 justify-between">
                     <div className="flex xxs:w-full lg:w-3/4">
-                        <div className="text-sm font-bold text-gray-400 xxs:space-y-6 lg:space-y-12  w-200">
+                        <div className="text-sm font-bold text-gray-400 xxs:space-y-2 lg:space-y-12  w-200">
                             {username &&
                             <div>
                                 <span>Username:</span>
@@ -63,7 +63,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                             </div>}
                         
                         </div>
-                        <div className="text-sm font-bold text-gray-400 xxs:space-y-6 lg:space-y-12  w-200">
+                        <div className="text-sm font-bold text-gray-400 xxs:space-y-2 lg:space-y-12  w-200">
                             {fname && lname &&
                             <div>
                                 <span>Name:</span>
@@ -92,9 +92,10 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                 </div>
 
                 <div className="text-lg 
-                                xxs:text-sm  xxs:pt-4
+                                xxs:text-sm  xxs:pt-2
                                 md:text-base md:pt-8
                                 lg:text-lg lg:pt-28
+                                xl:pt-20
                                 font-bold text-gray-400">
                     Classes in common with you:
                     <div className="flex space-x-4 xxs:mt-1 mt-4 overflow-auto">
