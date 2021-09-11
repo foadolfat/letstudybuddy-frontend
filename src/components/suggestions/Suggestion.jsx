@@ -5,6 +5,7 @@ import SuggestedPeerClasses from "./SuggestedPeerClasses.jsx";
 import { ReactComponent as ARROW_RIGHT } from "../../assets/icons/long_arrow_right.svg"
 import { ReactComponent as ARROW_LEFT } from "../../assets/icons/long_arrow_left.svg"
 import { ReactComponent as CAP } from "../../assets/icons/cap.svg"
+import ace from "../../assets/pictures/ace.png"
 
 function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}){
     const [classes, setClasses] = React.useState();
@@ -39,7 +40,8 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
                             sm:w-350 sm:h-450  
                             xs:w-350 xs:h-450
                             xxs:w-250 xxs:h-400">
-                <span className="flex justify-between lg:text-base lg:font-bold lg:pb-2 xxs:text-sm xxs:font-thin xxs:pb-0 text-secondary-dark"><ARROW_LEFT/> Swipe left to ignore <CAP/> Swipe right to match<ARROW_RIGHT/></span>
+                <span className="flex justify-between lg:text-base lg:font-bold lg:pb-2 xxs:text-sm xxs:font-thin xxs:pb-0 text-secondary-dark">
+                    <ARROW_LEFT/> Swipe left to ignore <img  src={ace} className="w-5 h-5 " alt="logo"/> Swipe right to match<ARROW_RIGHT/></span>
                 <div className="flex xxs:flex-col lg:flex-row xxs:space-y-6 lg:space-y-0 justify-between">
                     <div className="flex xxs:w-full lg:w-3/4">
                         <div className="text-sm font-bold text-gray-400 xxs:space-y-2 lg:space-y-12  w-200">

@@ -7,6 +7,7 @@ import SignUp from '../components/auth/Signup';
 import { NavLink} from 'react-router-dom';
 import { ReactComponent as LEFT } from "../assets/icons/chevron_left.svg"
 import { ReactComponent as RIGHT } from "../assets/icons/chevron_right.svg"
+import ace from "../assets/pictures/ace.png"
 
 function Auth () {
     const [userCreated, setUserCreated] = React.useState();
@@ -24,7 +25,9 @@ function Auth () {
                     <div className="relative flex flex-col md:flex-row">
                         <NavLink 
                             exact className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
-                            to='/Landing'><span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">Study Buddy<span className="text-primary"></span></span>
+                            to='/Landing'><span className="mx-auto text-xl font-black leading-none text-gray-900 select-none flex items-center">
+                                <img  src={ace} className="w-10 h-10 " alt="logo"/>
+                                Study Buddy<span className="text-primary"></span></span>
                         </NavLink>
                         {/* <nav className="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-primary-dark">
                             <NavLink 
