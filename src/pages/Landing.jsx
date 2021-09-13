@@ -131,7 +131,7 @@ function Landing(){
             </section>
 
 
-            <section class="py-20 bg-page-background" id="how" >
+            <section class="py-20 bg-surface" id="how" >
             <div class="container items-center max-w-6xl  mx-auto sm:px-20 md:px-32 lg:px-16">
                 <div class="flex flex-wrap items-center -mx-3">
                 <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
@@ -164,7 +164,7 @@ function Landing(){
             </section>
 
 
-            <section className="w-full bg-page-background pt-7 pb-7 md:pt-20 md:pb-24">
+            <section className="w-full bg-surface pt-7 pb-7 md:pt-20 md:pb-24">
                 <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
 
                     <div className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
@@ -286,7 +286,7 @@ function Landing(){
             </section>
 
 
-            <section className="flex items-center justify-center py-10 text-white bg-page-background sm:py-16 md:py-24 lg:py-32">
+            <section className="flex items-center justify-center py-10 text-white bg-surface sm:py-16 md:py-24 lg:py-32">
                 <div className="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
                     <div className="flex flex-col w-full md:flex-row">
 
@@ -349,7 +349,7 @@ function Landing(){
                 </div>
             </section>
         
-            <section className="bg-page-background">
+            <section className="bg-surface">
                 <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                     <nav className="flex flex-wrap justify-center -mx-5 -my-2">
                         <div className="px-5 py-2">
