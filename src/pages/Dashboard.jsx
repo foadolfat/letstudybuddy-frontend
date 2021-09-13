@@ -41,7 +41,7 @@ function Dashboard(){
     return(
         
 
-        <div className="parent xs:flex xs:flex-col --page-background">
+        <div className="parent xs:flex xs:flex-col bg-page-background">
             <div className="">
                 <Navbar notification={notification} onClick={onClick} isActive={isActive} inProfile={false}/>
             </div>
