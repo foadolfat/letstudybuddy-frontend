@@ -12,12 +12,12 @@ function Message({content, username, date}){
     }, [chat, username]);
     
     return(
-        <div className="flex flex-col m-2 ">
+        <div className="flex flex-col m-1 ">
             { currentUser && 
                 <div className="">
-                    <div className="pt-2 pb-1 pl-2 text-xs text-gray-400">{username}</div>
+                    <div className="pt-1 pb-1 pl-1 text-xs text-gray-400">{username}</div>
                     <div className="w-full">
-                        <div className=" p-2 text-base font-serif break-words h-full max-w-full bg-blue-400 text-gray-800 rounded-2xl shadow-lg float-left">
+                        <div className=" p-1 text-base font-serif break-words h-full max-w-full bg-blue-400 text-gray-800 rounded-2xl shadow-lg float-left">
                             {content}
                         </div>
                     </div>
@@ -26,9 +26,9 @@ function Message({content, username, date}){
             { !currentUser &&
                 
                 <div className="">
-                    <div className="pt-2 pb-1 pr-2 text-xs text-gray-400 float-right">{username}</div>
+                    <div className="pt-1 pb-1 pr-1 text-xs text-gray-400 float-right">{username}</div>
                     <div className="w-full float-right">
-                        <div className="p-2 text-base font-sans-serif Break break-words h-full max-w-full bg-green-400 text-gray-800 rounded-2xl shadow-lg float-right">
+                        <div className="p-1 text-base font-serif Break break-words h-full max-w-full bg-green-400 text-gray-800 rounded-2xl shadow-lg float-right">
                             {content}
                         </div>
                     </div>

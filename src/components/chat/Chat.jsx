@@ -106,12 +106,12 @@ function Chat({setNotification}){
                         bottom:true,
                     }}
                 >
-                <div className="flex flex-col w-full h-full text-black bg-primary rounded-md shadow-lg p-4 space-y-2 justify-between">
+                <div className="flex flex-col w-full h-full text-black bg-primary rounded-md shadow-lg p-2 space-y-2 justify-between">
                     {/* <div className="bg-white break-words overflow-auto h-full resize-none focus:outline-none p-2 rounded-md">{messages && messages}</div> */}
 
                     {room && 
                         <div className="flex flex-col h-full space-y-2">
-                            <div className="bg-surface break-words overflow-auto h-full resize-none focus:outline-none p-2 rounded-md">
+                            <div className="bg-surface break-words overflow-auto h-full resize-none focus:outline-none p-1 rounded-md">
                                 { messages && messages.length && messages.map((message, index) => {
                                     return <Message key={index} content={message.content} username={message.username} date={message.date_sent} message_user_id={message.user_id}/>
                                 })}
