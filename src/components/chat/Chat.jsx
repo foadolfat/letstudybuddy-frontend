@@ -111,7 +111,7 @@ function Chat({setNotification}){
 
                     {room && 
                         <div className="flex flex-col h-full space-y-2">
-                            <div className="--surface break-words overflow-auto h-full resize-none focus:outline-none p-2 rounded-md">
+                            <div className="bg-surface break-words overflow-auto h-full resize-none focus:outline-none p-2 rounded-md">
                                 { messages && messages.length && messages.map((message, index) => {
                                     return <Message key={index} content={message.content} username={message.username} date={message.date_sent} message_user_id={message.user_id}/>
                                 })}
