@@ -28,7 +28,7 @@ function Suggestion({username, fname, lname, degree, major, peer_id, gpa, email}
         <div className=" flex flex-col shadow-lg ">
             
             
-            <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg 
+            <div className="flex flex-col --surface text-gray-800 rounded-lg 
 
                             xxs:p-4 lg:p-8 
                             

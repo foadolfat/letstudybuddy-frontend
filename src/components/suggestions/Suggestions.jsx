@@ -63,7 +63,7 @@ function Suggestions(){
                         )}
                         {!peerSuggestions.length==1 && 
                         <div className="absolute flex flex-col shadow-lg ">
-                            <div className="flex flex-col bg-gray-200 text-gray-800 rounded-lg text-xl font-bold
+                            <div className="flex flex-col --surface text-gray-800 rounded-lg text-xl font-bold
             
                                         xxs:p-4 lg:p-8 
                                         

@@ -35,7 +35,7 @@ function Profile(){
     })
 
     return(
-        <div className="parent xs:flex xs:flex-col bg-gray-300">
+        <div className="parent xs:flex xs:flex-col --page-background">
             <div className="">
                 <Navbar onClick={onClick} notification={notification} isActive={isActive} inProfile={true}/>
             </div>

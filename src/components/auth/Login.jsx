@@ -40,14 +40,14 @@ function Login({userCreated}){
                 {!fetchInProgress && 
                     <form onSubmit={handleSubmit}>
 
-                        <div className="bg-white rounded-lg border shadow-lg  xxs:p-4 md:p-12 xxs:w-full md:w-full h-full relative ">
+                        <div className="--surface rounded-lg border shadow-lg  xxs:p-4 md:p-12 xxs:w-full md:w-full h-full relative ">
                             <div className="text-2xl text-black font-bold ">Sign in:</div>
                             <div className="grid grid-cols-1 gap-1 field mt-12">
 
-                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
+                                <input required className="border-2 border-gray-300 --surface px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
                                     type="text" name="username"  placeholder="Username" ref={usernameRef}/>
 
-                                <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
+                                <input required className="border-2 border-gray-300 --surface px-5 pr-14 h-10 md:w-60 rounded-lg text-sm text-black focus:outline-none"
                                     type="password" name="pass"  placeholder="Password" ref={passwordRef }/>
                                 
                                 <button type="submit" className=" border-gray-300  bg-secondary hover:bg-secondary-dark h-10 rounded-lg text-sm focus:outline-none inset-x-center signinbuttonmargin md:w-60 text-white font-bold" >
@@ -77,13 +77,13 @@ export default Login;
 
 
 
-// <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
+// <input required className="border-2 border-gray-300 --surface px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
 //                                 type="text" name="username" value = {newUser.u} placeholder="Username" onChange={e => setUser(ev => ({
 //                                     ...ev,
 //                                     u : e.target.value,
 //                                     }))}/>
 
-//                             <input required className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
+//                             <input required className="border-2 border-gray-300 --surface px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
 //                                 type="text" name="pass" value = {newUser.p} placeholder="Password" onChange={e => setUser(ev => ({
 //                                     ...ev,
 //                                     p : e.target.value,
